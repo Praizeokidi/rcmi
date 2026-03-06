@@ -2,25 +2,32 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const DonateButton = ({ amount }) => {
+
   const handleDonate = async () => {
+
     if (!amount || isNaN(amount) || Number(amount) <= 0) {
       alert("Please enter a valid amount");
       return;
     }
 
     try {
+
+      /* ✅ CHANGED: using Vite environment variable */
       const response = await axios.post(
-        "http://localhost:5000/initialize-donation",
+        `${import.meta.env.VITE_BACKEND_URL}/initialize-donation`,
         {
-          email: "donor@example.com", // you can replace with dynamic email later
-          amount: Number(amount), // send the number typed by the donor
+          email: "donor@example.com",
+          amount: Number(amount),
         }
       );
 
       // Redirect user to Paystack payment page
       window.location.href = response.data.data.authorization_url;
+
     } catch (err) {
+
       console.error("Donation initialization failed:", err);
+
     }
   };
 

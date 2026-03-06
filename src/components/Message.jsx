@@ -1,5 +1,5 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import FounderImg from "../assets/founder.jpg";
+import FounderImg from "../assets/founder.jpeg";
 import { HiOutlineAcademicCap } from "react-icons/hi2";
 // import Section from "./Section";
 

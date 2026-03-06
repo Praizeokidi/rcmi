@@ -1,4 +1,5 @@
 import { FaArrowCircleRight } from "react-icons/fa";
+import eyeImg from '../assets/eye.jpg';
 
 const ContactPage = () => {
   return (
@@ -29,7 +30,7 @@ const ContactPage = () => {
                 <div className="relative z-10 bg-white rounded-xl shadow-lg p-8  text-gray-600">
                   <form action="" className="flex flex-col space-y-4">
                     <div>
-                      <label for="" className="text-sm">
+                      <label htmlFor="" className="text-sm">
                         Your name
                       </label>
                     </div>
@@ -41,7 +42,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div>
-                      <label for="" className="text-sm">
+                      <label htmlFor="" className="text-sm">
                         Email Address
                       </label>
                     </div>
@@ -53,7 +54,7 @@ const ContactPage = () => {
                       />
                     </div>
                     <div>
-                      <label for="" className="text-sm">
+                      <label htmlFor="" className="text-sm">
                         Message
                       </label>
                     </div>
@@ -137,7 +138,10 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
-          <div className="text-white h-64 bg-[url('/images/eye.jpg')] bg-center bg-cover bg-no-repeat  relative overflow-x-hidden">
+         <div
+  className="text-white h-64 bg-center bg-cover bg-no-repeat relative overflow-x-hidden"
+  style={{ backgroundImage: `url(${eyeImg})` }}
+>
             <div className="p-7 backdrop-brightness-50 h-full">
               <h1 className="font-bold text-xl">
                 RCMI provides shelter for the refugees

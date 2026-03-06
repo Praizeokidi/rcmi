@@ -1,4 +1,4 @@
-import DonImg from "../assets/founder.jpg";
+import DonImg from "../assets/founder.jpeg";
 //import DonImg2 from "../images/pexels-victor-moragriega-1390556186-29421908.jpg";
 import BgMain from "../images/main-bcg.jpeg";
 import BgGirls from "../images/pexels-jibarofoto-2014773.jpg";

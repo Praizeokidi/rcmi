@@ -13,24 +13,24 @@ const Strategy = () => {
         </div>
       </div> */}
       <div>
-        <div class="bg-gray-50 py-12">
-          <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-            <p class="mx-auto py-10 mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+        <div className="bg-gray-50 py-12">
+          <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+            <p className="mx-auto py-10 mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
               Strategy
             </p>
-            <h2 class="text-center text-base/7 font-semibold text-indigo-600">
+            <h2 className="text-center text-base/7 font-semibold text-indigo-600">
               The RCMI approach that helps us to acheive the goals and
               objectives of the ministry include :
             </h2>
-            <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-              <div class="relative hover:shadow-2xl hover:-translate-y-2 transition-all lg:row-span-2">
-                <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-                <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-                  <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+            <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+              <div className="relative hover:shadow-2xl hover:-translate-y-2 transition-all lg:row-span-2">
+                <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+                  <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Community Diagnosis
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       Prior to engagement with each community, RCMI conducts a
                       mapping exercise and needs assessment to determine the
                       felt needs of each community. Outcome of the initial
@@ -39,11 +39,11 @@ const Strategy = () => {
                       of interventions.
                     </p>
                   </div>
-                  <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+                  <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Sustainability
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       Sustainability is at the heart of RCMI initiatives. While
                       working towards sustainability and self-reliance as an
                       organisation, we identify existing community structures
@@ -67,16 +67,16 @@ const Strategy = () => {
                     </div>
                   </div> */}
                 </div>
-                <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
               </div>
-              <div class="relative hover:shadow-2xl hover:-translate-y-2 transition-all max-lg:row-start-1">
-                <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
-                <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-                  <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+              <div className="relative hover:shadow-2xl hover:-translate-y-2 transition-all max-lg:row-start-1">
+                <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+                  <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Capacity Building
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       Under this strategy, RCMI focuses on institutional
                       capacity development including infrastructure and human
                       resource development. RCMI puts in place structures and
@@ -91,24 +91,24 @@ const Strategy = () => {
                       groups.
                     </p>
                   </div>
-                  <div class="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
+                  <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
                     <img
-                      class="w-full max-lg:max-w-xs"
+                      className="w-full max-lg:max-w-xs"
                       src="https://tailwindui.com/plus/img/component-images/bento-03-performance.png"
                       alt=""
                     />
                   </div>
                 </div>
-                <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
               </div>
-              <div class="relative hover:shadow-2xl hover:-translate-y-2 transition-all max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-                <div class="absolute inset-px rounded-lg bg-white"></div>
-                <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
-                  <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+              <div className="relative hover:shadow-2xl hover:-translate-y-2 transition-all max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+                <div className="absolute inset-px rounded-lg bg-white"></div>
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+                  <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Demand Generation
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       RCMI uses strategic communication including the adoption
                       of a multi-pronged media approach (interpersonal, print,
                       and electronic), social media, and community structures to
@@ -119,24 +119,24 @@ const Strategy = () => {
                       social services.
                     </p>
                   </div>
-                  <div class="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
+                  <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
                     <img
-                      class="h-[min(152px,40cqw)] object-cover object-center"
+                      className="h-[min(152px,40cqw)] object-cover object-center"
                       src="https://tailwindui.com/plus/img/component-images/bento-03-security.png"
                       alt=""
                     />
                   </div>
                 </div>
-                <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
               </div>
-              <div class="relative hover:shadow-2xl hover:-translate-y-2 transition-all lg:row-span-2">
-                <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-                <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-                  <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+              <div className="relative hover:shadow-2xl hover:-translate-y-2 transition-all lg:row-span-2">
+                <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+                  <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Partnership and Networking
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       The organization networks with relevant individuals,
                       philanthropists, mission agencies, ministries, community
                       groups, foundations, international and national
@@ -145,11 +145,11 @@ const Strategy = () => {
                       programmes in line with the goals and aspirations of RCMI.
                     </p>
                   </div>
-                  <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                    <p class="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
+                  <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                    <p className="mt-2 text-lg font-bold tracking-tight text-gray-950 max-lg:text-center">
                       Advocacy (Policy Change and Resource Mobilization)
                     </p>
-                    <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
                       At RCMI, we engage in advocacy. This effort culminates in
                       policy change and resource mobilisation. We engage the
                       gate keepers including policy makers and community opinion
@@ -183,7 +183,7 @@ const Strategy = () => {
                     </div>
                   </div> */}
                 </div>
-                <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+                <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
               </div>
             </div>
           </div>
