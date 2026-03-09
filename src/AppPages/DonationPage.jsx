@@ -172,7 +172,14 @@ const DonationPage = () => {
 
           {/* Pass amount as a prop to DonateButton */}
           <div className="mt-4">
-            <DonateButton />
+           <a
+  href="https://paystack.shop/pay/rcmi"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
+>
+  DONATE NOW
+</a>
           </div>
         </form>
         </div>
