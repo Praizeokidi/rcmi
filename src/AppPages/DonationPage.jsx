@@ -169,25 +169,10 @@ const DonationPage = () => {
           </p>
           <h1 className="font-bold text-2xl">Make a donation</h1>
             <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
-          <div>
-            <label htmlFor="amount" className="text-sm">
-              Amount ₦
-            </label>
-          </div>
-          <div>
-            <input
-              id="amount"
-              type="number"
-              placeholder="Enter amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-            />
-          </div>
 
           {/* Pass amount as a prop to DonateButton */}
           <div className="mt-4">
-            <DonateButton amount={amount} />
+            <DonateButton />
           </div>
         </form>
         </div>
