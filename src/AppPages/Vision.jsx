@@ -2,6 +2,7 @@ import DonImg from "../assets/founder.jpeg";
 //import DonImg2 from "../images/pexels-victor-moragriega-1390556186-29421908.jpg";
 import BgMain from "../images/main-bcg.jpeg";
 import BgGirls from "../images/pexels-jibarofoto-2014773.jpg";
+import { Link } from "react-router-dom";
 //import Newsletter from "../components/Newsletter";
 //import BgImage from "../images/pexels-jibarofoto-2014773.jpg";
 
@@ -156,12 +157,12 @@ const Vision = () => {
                   to rescue one girl. Will you make a compassionate donation
                   today to release more girls from trafficking?
                 </p>
-                <a
-                  href="/"
-                  className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
-                >
-                  Donate Now
-                </a>
+                <Link
+  to="/donations"
+  className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
+>
+  DONATE NOW
+</Link>
               </div>
             </div>
           </div>
