@@ -30,7 +30,11 @@ const DonationPage = () => {
             poor, the outcast and those Jesus would consider the least of my
             brothers."
           </p>
-          <a className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
+          <a  
+          href="https://paystack.shop/pay/rcmi"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
             Help Today!
           </a>
           <img className="py-2 w-52 m-auto" src={CcImg} />
@@ -138,9 +142,13 @@ const DonationPage = () => {
             </div>
             <div className="py-8">
               {" "}
-              <a className="text-2xl grid w-72  bg-red-700 justify-self-center text-center md:w-96 rounded-md text-white p-6 h-20 hover:bg-red-500 transition-all">
-                Help Today!
-              </a>
+               <a  
+          href="https://paystack.shop/pay/rcmi"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
+            Help Today!
+          </a>
               <img className="py-2 w-52 m-auto" src={CcImg} />
             </div>
           </div>
