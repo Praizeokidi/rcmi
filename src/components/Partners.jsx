@@ -1,4 +1,6 @@
 import PartnerImg from "../assets/pexels-rdne-6646852.jpg";
+import { Link } from "react-router-dom";
+
 
 const Partners = () => {
   return (
@@ -24,12 +26,12 @@ const Partners = () => {
               recurring donation, your support is impacting lives for eternity.
             </p>
             <div className="my-11">
-              <a
-                href="/"
+              <Link
+              to="/donations"
                 className="buttn bg-green-500 rounded text-white p-4 hover:bg-green-400 hover:text-black transition-all  font-semibold"
               >
                 Become a Monthly Donor
-              </a>
+             </Link>
             </div>
           </div>
         </div>

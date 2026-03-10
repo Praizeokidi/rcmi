@@ -159,7 +159,7 @@ const Vision = () => {
                 </p>
                 <Link
   to="/donations"
-  className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
+  className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
 >
   DONATE NOW
 </Link>

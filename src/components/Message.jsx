@@ -22,8 +22,7 @@ const Message = () => {
               <FaQuoteLeft />
               We follow Jesus’ example by being an active, visible, tangible
               expression of God’s love as we work alongside the poor and
-              oppressed.
-              <FaQuoteRight />
+              oppressed.<FaQuoteRight />
             </p>
 
             <p className="py-4 flex">
