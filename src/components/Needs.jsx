@@ -1,6 +1,7 @@
 import NeedImg1 from "../assets/gospel.jpg";
 import NeedImg2 from "../assets/pexels-jayb-11045177.jpg";
 import NeedImg3 from "../assets/pexels-kublackphotography-10858384.jpg";
+import { Link } from "react-router-dom";
 
 const Needs = () => {
   return (
@@ -21,8 +22,8 @@ const Needs = () => {
               />
               <p className="py-4">$4,000 of $12,000 raised</p>
 
-              <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                <div class="bg-orange-600 h-4 rounded-full w-1/3"></div>
+              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
               </div>
 
               <p className="py-7 tracking-widest font-semibold">
@@ -31,12 +32,11 @@ const Needs = () => {
                 ministries in the following areas.
               </p>
               <div className="py-5">
-                <a
-                  href="/"
-                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
-                >
+                <Link
+                  to="/donations"
+                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
                   Donate Now
-                </a>
+                </Link>
               </div>
             </div>
             <div className="my-4 justify-items-center grid">
@@ -48,21 +48,20 @@ const Needs = () => {
                 src={NeedImg2}
               />
               <p className="py-4">$900 of $12,000 raised</p>
-              <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                <div class="bg-orange-600 h-4 rounded-full w-1/12"></div>
+              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                <div className="bg-orange-600 h-4 rounded-full w-1/12"></div>
               </div>
               <p className="py-7 tracking-widest font-semibold">
                 Across Southeast Asia, the Badjao children live on the margins
                 of society. These forgotten little ones belong to one of the
-                region's most overlooked tribes.
+                region\&apos;s most overlooked tribes.
               </p>
               <div className="py-5">
-                <a
-                  href="/"
-                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
-                >
+                <Link
+                  to="/donations"
+                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
                   Donate Now
-                </a>
+                </Link>
               </div>
             </div>
             <div className="my-4 justify-items-center grid">
@@ -74,7 +73,7 @@ const Needs = () => {
                 src={NeedImg3}
               />
               <p className="py-4">$0 of $12,000 raised</p>
-              <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
                 {/* <div class="bg-orange-600 h-4 rounded-full w-3"></div> */}
               </div>
               <p className=" py-7 tracking-widest font-semibold">
@@ -83,19 +82,18 @@ const Needs = () => {
                 food. Their survival is a daily struggle.
               </p>
               <div className="py-5">
-                <a
-                  href="/"
-                  className="buttn bg-green-500 rounded p-4 text-white  hover:bg-green-600 transition-all hover:text-black"
-                >
+                <Link
+                  to="/donations"
+                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
                   Donate Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div className="my-14">
             {" "}
-            <a
-              href="/"
+            <Link
+              to="/urgentneeds"
               className="buttn hover:bg-orange-700 bg-orange-600 rounded-3xl p-4 text-white"
             >
               View More Urgent Needs{" "}
@@ -103,7 +101,7 @@ const Needs = () => {
                 className={"bg-orange-400 rounded "}
                 name="chevron-forward-outline"
               ></ion-icon>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

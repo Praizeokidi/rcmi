@@ -26,7 +26,7 @@ const Hero = () => {
   to="/donations"
   className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
 >
-  DONATE NOWz
+  DONATE NOW
 </Link>
             </div>
           </div>

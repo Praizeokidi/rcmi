@@ -23,7 +23,7 @@ const UrgentNeeds = () => {
                 donate today.
               </p>
               <a
-                href="/"
+                href="/urgentneeds"
                 className="buttn text-white text-center bg-green-500  hover:bg-green-600 hover:text-black transition p-4 max-w-72"
               >
                 Meet an Urgent Need Below
