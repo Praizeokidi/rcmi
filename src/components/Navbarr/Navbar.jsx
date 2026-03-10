@@ -34,11 +34,14 @@ function Navbar() {
       <nav className="navbar">
        <Link
   to="/"
-  className="navbar-logo flex items-center gap-2"
+  className="navbar-logo flex items-center"
   onClick={closeMobileMenu}
 >
-  <img src={Logo} alt="RCMI Logo" className="h-8"  />
-  <span className="font-bold text-lg">RCMI</span>
+  <img
+    src={Logo}
+    alt="Refuge and Consolation Ministry International"
+    className="h-14 md:h-16 w-auto object-contain"
+  />
 </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
