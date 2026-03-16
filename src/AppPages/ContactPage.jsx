@@ -218,6 +218,7 @@ const ContactPage = () => {
             <h1 className="font-bold text-xl">
               RCMI provides shelter for the refugees
             </h1>
+            <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
         </div>
 
@@ -229,6 +230,7 @@ const ContactPage = () => {
             <h1 className="font-bold text-xl">
               RCMI provides shelter for the refugees
             </h1>
+            <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
         </div>
 
@@ -240,6 +242,7 @@ const ContactPage = () => {
             <h1 className="font-bold text-xl">
               RCMI provides shelter for the refugees
             </h1>
+            <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
         </div>
 
@@ -251,6 +254,7 @@ const ContactPage = () => {
             <h1 className="font-bold text-xl">
               RCMI provides shelter for the refugees
             </h1>
+            <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
         </div>
 
