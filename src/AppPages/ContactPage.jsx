@@ -2,6 +2,7 @@ import { useState } from "react"; // NEW
 import axios from "axios"; // NEW
 import { FaArrowCircleRight } from "react-icons/fa";
 import eyeImg from "../assets/eye.jpg";
+import okayImg from "../images/okay.jpeg"
 
 const ContactPage = () => {
 
@@ -174,7 +175,10 @@ const ContactPage = () => {
       {/* CARDS */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4">
 
-        <div className="text-white h-64 bg-[url('/images/okay.jpeg')] bg-center bg-cover">
+          <div
+          className="text-white h-64 bg-center bg-cover"
+          style={{ backgroundImage: `url(${okayImg})` }}
+        >
           <div className="p-7 backdrop-brightness-50 h-full">
             <h1 className="font-bold text-xl">
               RCMI provides shelter for the refugees
