@@ -4,6 +4,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import eyeImg from "../assets/eye.jpg";
 import okayImg from "../images/okay.jpeg"
 import gallery17Img from "../images/gallery17.jpg"
+import gallery2Img from "../images/gallery2.jpeg"
 
 const ContactPage = () => {
 
@@ -208,6 +209,18 @@ const ContactPage = () => {
             </h1>
           </div>
         </div>
+
+        <div
+          className="text-white h-64 bg-center bg-cover"
+          style={{ backgroundImage: `url(${gallery2Img})` }}
+        >
+          <div className="p-7 backdrop-brightness-50 h-full">
+            <h1 className="font-bold text-xl">
+              RCMI provides shelter for the refugees
+            </h1>
+          </div>
+        </div>
+
       </div>
     </div>
   );
