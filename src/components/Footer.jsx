@@ -1,13 +1,14 @@
 import { copyrightSign } from "../assets/icons";
 // import { footerLogo } from "../assets/images";
 import { footerLinks, socials } from "../constants";
+import { Link } from "react-router-dom"; // CHANGED: imported Link from react-router-dom
 
 const Footer = () => {
   return (
-    <footer className=" bg-black text-white lg:p-20  p-10 max-container">
+    <footer className="bg-black text-white lg:p-20 p-10 max-container">
       <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
         <div className="flex flex-col items-start">
-          <a href="/">
+          <Link to="/"> {/* CHANGED: replaced <a href="/"> with <Link> */}
             {/* <img
               src={footerLogo}
               alt="logo"
@@ -15,7 +16,7 @@ const Footer = () => {
               height={46}
               className="m-0"
             /> */}
-          </a>
+          </Link>
           <p className="mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm">
             Your generosity will allow us to help more families in need...
           </p>
@@ -25,6 +26,7 @@ const Footer = () => {
                 key={item.id}
                 href={item.url}
                 target="_blank"
+                rel="noopener noreferrer" // CHANGED: added for security
                 className="flex items-center justify-center w-10 h-10 bg-n-7 rounded-full transition-colors hover:bg-n-6"
               >
                 <img
@@ -38,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-1   lg:gap-36 gap-20 flex-wrap">
+        <div className="flex flex-1 lg:gap-36 gap-20 flex-wrap">
           {footerLinks.map((section) => (
             <div key={section.title}>
               <h4 className="font-montserrat text-2xl leading-normal font-medium mb-6 text-white">
@@ -50,7 +52,13 @@ const Footer = () => {
                     className="mt-3 font-montserrat text-base leading-normal text-white-400 hover:text-slate-gray"
                     key={link.name}
                   >
-                    <a href={link.link}>{link.name}</a>
+                    {link.link.startsWith("http") || link.link.startsWith("mailto:") || link.link.startsWith("tel:") ? (
+                      <a href={link.link} target="_blank" rel="noopener noreferrer">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link to={link.link}>{link.name}</Link> // CHANGED: internal links use React Router Link
+                    )}
                   </li>
                 ))}
               </ul>
