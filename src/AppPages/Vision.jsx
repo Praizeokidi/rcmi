@@ -5,10 +5,7 @@ import BgGirls from "../images/pexels-jibarofoto-2014773.jpg";
 import { Link } from "react-router-dom";
 //import Newsletter from "../components/Newsletter";
 //import BgImage from "../images/pexels-jibarofoto-2014773.jpg";
-import Vision from "./pages/Vision";
 
-// inside your routes
-<Route path="/vision" element={<Vision />} />
 
 
 

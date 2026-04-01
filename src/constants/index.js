@@ -38,6 +38,12 @@ import {
 
 import { Link } from "react-router-dom";
 
+{Link.map((item, index) => (
+  <Link key={index} to={item.link}>
+    {item.name}
+  </Link>
+))}
+
 export const navigation = [
   {
     id: "0",
@@ -363,11 +369,7 @@ export const countries = [
   // },
 ];
 
-{Link.map((item, index) => (
-  <Link key={index} to={item.link}>
-    {item.name}
-  </Link>
-))}
+
 
 
 export const footerLinks = [
