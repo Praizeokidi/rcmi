@@ -5,11 +5,6 @@ export const MenuItems = [
     cName: "dropdown-link",
   },
   {
-    title: "Our Morals",
-    path: "/consulting",
-    cName: "dropdown-link",
-  },
-  {
     title: "Contact Us",
     path: "/contact",
     cName: "dropdown-link",
