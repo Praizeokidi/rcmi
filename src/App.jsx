@@ -17,7 +17,7 @@ import Vision from "./AppPages/Vision";
 import Navbar from "./components/Navbarr/Navbar";
 // import Headerr from "./components/Headerr";
 
-<Route path="/vision" element={<Vision />} />
+
 
 
 const App = () => {
