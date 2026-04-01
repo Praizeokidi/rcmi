@@ -1,10 +1,13 @@
 import EyeImg from "../assets/gallery15.jpg";
-// import NeedImg2 from "../assets/give.jpg";
+import KidImg from "../assets/pexels-emmages-8948347.jpg";
 import ChildImg from "../assets/pexels-jayb-11045177.jpg";
 import NeedImg from "../assets/pexels-julian-cordero-386432806-29380333.jpg";
 import HeaderImg from "../components/Header";
 import RefugeesImg from "../assets/pexels-kublackphotography-10858384.jpg";
 import BibleImg from "../assets/gospel.jpg";
+import SafariImg from "../assets/pexels-safari-consoler-3290243-25228111.jpg";
+import JustImg from "../assets/pexels-justin-muhinda-1340590076-25457343.jpg";
+import JibaImg from "../assets/pexels-jibarofoto-2774546.jpg";
 import Newsletter from "../components/Newsletter";
 import { Link } from "react-router-dom";
 
@@ -164,12 +167,12 @@ const UrgentNeeds = () => {
             <div className="text-center rounded-2xl border-2">
               {" "}
               <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
-                Send The Gospel To The Unreached Tribes
+                Raise Up Disciples And Leaders
               </h1>
               <div className="my-4  p-4  justify-items-center grid">
                 <img
                   className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
-                  src={NeedImg2}
+                  src={KidImg}
                 />
                 <p className="pb-4 ">$4,000 of $12,000 raised</p>
 
@@ -191,6 +194,93 @@ const UrgentNeeds = () => {
               </div>
             </div>
             <div className="text-center rounded-2xl border-2">
+              {" "}
+              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
+                Respond To Disaster
+              </h1>
+              <div className="my-4  p-4  justify-items-center grid">
+                <img
+                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
+                  src={SafariImg}
+                />
+                <p className="pb-4 ">$4,000 of $12,000 raised</p>
+
+                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
+                </div>
+
+                <div className="py-9">
+                  <Link
+                    to="/donations"
+                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
+                  >
+                    Meet an Urgent Need
+                  </Link>
+                </div>
+                <a href="" className="underline">
+                  Learn More →{" "}
+                </a>
+              </div>
+            </div>
+            <div className="text-center rounded-2xl border-2">
+              {" "}
+              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
+                Provide A Future For Children
+              </h1>
+              <div className="my-4  p-4  justify-items-center grid">
+                <img
+                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
+                  src={JustImg}
+                />
+                <p className="pb-4 ">$4,000 of $12,000 raised</p>
+
+                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
+                </div>
+
+                <div className="py-9">
+                  <Link
+                    to="/donations"
+                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
+                  >
+                    Meet an Urgent Need
+                  </Link>
+                </div>
+                <a href="" className="underline">
+                  Learn More →{" "}
+                </a>
+              </div>
+            </div>
+            <div className="text-center rounded-2xl border-2">
+              {" "}
+              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
+                Support Prosecuted Christians
+              </h1>
+              <div className="my-4  p-4  justify-items-center grid">
+                <img
+                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
+                  src={JibaImg}
+                />
+                <p className="pb-4 ">$4,000 of $12,000 raised</p>
+
+                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
+                </div>
+
+                <div className="py-9">
+                  <Link
+                    to="/donations"
+                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
+                  >
+                    Meet an Urgent Need
+                  </Link>
+                </div>
+                <a href="" className="underline">
+                  Learn More →{" "}
+                </a>
+              </div>
+            </div>
+            {/* <div className="text-center rounded-2xl border-2">
               {" "}
               <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
                 Send The Gospel To The Unreached Tribes
@@ -218,94 +308,7 @@ const UrgentNeeds = () => {
                   Learn More →{" "}
                 </a>
               </div>
-            </div>
-            <div className="text-center rounded-2xl border-2">
-              {" "}
-              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
-                Send The Gospel To The Unreached Tribes
-              </h1>
-              <div className="my-4  p-4  justify-items-center grid">
-                <img
-                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
-                  src={NeedImg1}
-                />
-                <p className="pb-4 ">$4,000 of $12,000 raised</p>
-
-                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
-                </div>
-
-                <div className="py-9">
-                  <Link
-                    to="/donations"
-                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
-                  >
-                    Meet an Urgent Need
-                  </Link>
-                </div>
-                <a href="" className="underline">
-                  Learn More →{" "}
-                </a>
-              </div>
-            </div>
-            <div className="text-center rounded-2xl border-2">
-              {" "}
-              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
-                Send The Gospel To The Unreached Tribes
-              </h1>
-              <div className="my-4  p-4  justify-items-center grid">
-                <img
-                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
-                  src={NeedImg2}
-                />
-                <p className="pb-4 ">$4,000 of $12,000 raised</p>
-
-                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
-                </div>
-
-                <div className="py-9">
-                  <Link
-                    to="/donations"
-                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
-                  >
-                    Meet an Urgent Need
-                  </Link>
-                </div>
-                <a href="" className="underline">
-                  Learn More →{" "}
-                </a>
-              </div>
-            </div>
-            <div className="text-center rounded-2xl border-2">
-              {" "}
-              <h1 className="p-4 leading-relaxed tracking-widest bg-gray-200 font-bold">
-                Send The Gospel To The Unreached Tribes
-              </h1>
-              <div className="my-4  p-4  justify-items-center grid">
-                <img
-                  className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
-                  src={NeedImg3}
-                />
-                <p className="pb-4 ">$4,000 of $12,000 raised</p>
-
-                <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                  <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
-                </div>
-
-                <div className="py-9">
-                  <Link
-                    to="/donations"
-                    className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black"
-                  >
-                    Meet an Urgent Need
-                  </Link>
-                </div>
-                <a href="" className="underline">
-                  Learn More →{" "}
-                </a>
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <Newsletter />
