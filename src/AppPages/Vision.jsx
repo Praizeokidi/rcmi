@@ -22,22 +22,22 @@ const Vision = () => {
               jubilation as the saints’ march into heaven in their numbers.{" "}
             </p>
             <div className="hidden lg:block">
-              <a
-                href="/"
+              <Link
+                to="/donations"
                 className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
               >
-                Donate Now
-              </a>
+                DONATE NOW
+              </Link>
             </div>
           </div>
           <div className="hidden lg:block">
-          <img src={DonImg} alt="Founder" className="h-full" />
+            <img src={DonImg} alt="Founder" className="h-full" />
           </div>
         </div>
       </div>
 
-       {/* Mission Section */}
-            <div className="bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden"
+      {/* Mission Section */}
+      <div className="bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden"
         style={{ backgroundImage: `url(${BgMain})` }}>
         <div className="p-10  py-10 backdrop-brightness-50 space-y-5 text-white ">
           <div className="max-w-5xl m-auto lg:p-10 space-y-4 lg:space-y-8">
@@ -57,7 +57,7 @@ const Vision = () => {
       </div>
 
 
-       {/* History Section */}
+      {/* History Section */}
       <div className="p-6 text-center py-20">
         <h1 className="text-2xl py-6 font-bold lg:text-4xl">
           The History of RCMI
@@ -101,7 +101,7 @@ const Vision = () => {
               <p className="text-gray-700"> Global Director</p>
             </div>
 
-             {/* Add other leaders similarly */}
+            {/* Add other leaders similarly */}
             <div className="border-2 border-white p-6 space-y-6">
               <h1 className="text-xl"> Reverend Lei Abrahams Ndu </h1>
               <p className="text-gray-700"> National Coordinator</p>
@@ -139,7 +139,7 @@ const Vision = () => {
       </div>
       <div>
         <div className="sm:h-screen w-full h-[69rem] md:h-screen lg:h-screen xl:h-screen bg-center bg-cover bg-no-repeat relative overflow-x-hidden"
-        style={{ backgroundImage: `url(${BgGirls})` }}>
+          style={{ backgroundImage: `url(${BgGirls})` }}>
           <div className=" h-full w-full backdrop-brightness-50 ">
             <div>
               <div className="p-11 sm:px-15 sm:h-2/3 sm:pt-44 flex justify-items-center justify-between flex-col pt-32 h-2/3 absolute md:ml-10 lg:ml-28  antialiased max-w-3xl text-white ">
@@ -158,11 +158,11 @@ const Vision = () => {
                   today to release more girls from trafficking?
                 </p>
                 <Link
-  to="/donations"
-  className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
->
-  DONATE NOW
-</Link>
+                  to="/donations"
+                  className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
+                >
+                  DONATE NOW
+                </Link>
               </div>
             </div>
           </div>
