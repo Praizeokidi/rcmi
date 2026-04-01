@@ -36,7 +36,7 @@ import {
   yourlogo,
 } from "../assets";
 
-import { Link } from "react-router-dom";
+
 
 // {Link.map((item, index) => (
 //   <Link key={index} to={item.link}>
