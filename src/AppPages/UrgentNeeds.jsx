@@ -3,7 +3,7 @@ import EyeImg from "../assets/gallery15.jpg";
 import ChildImg from "../assets/pexels-jayb-11045177.jpg";
 // import NeedImg3 from "../assets/okay.jpeg";
 import HeaderImg from "../components/Header";
-import RefugeesImg from "../images/pexels-kublackphotography-10858384.jpg";
+import RefugeesImg from "../assets/pexels-kublackphotography-10858384.jpg";
 import BibleImg from "../assets/gospel.jpg";
 import Newsletter from "../components/Newsletter";
 import { Link } from "react-router-dom";
