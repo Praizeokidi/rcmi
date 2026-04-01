@@ -216,7 +216,7 @@ const ContactPage = () => {
         >
           <div className="p-7 backdrop-brightness-50 h-full">
             <h1 className="font-bold text-xl">
-              RCMI provides shelter for the refugees
+              RCMI provides economic empowerment to community
             </h1>
             <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
@@ -228,7 +228,7 @@ const ContactPage = () => {
         >
           <div className="p-7 backdrop-brightness-50 h-full">
             <h1 className="font-bold text-xl">
-              RCMI provides shelter for the refugees
+              RCMI provides help to victims of glycoma and eye defects
             </h1>
             <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
@@ -240,7 +240,7 @@ const ContactPage = () => {
         >
           <div className="p-7 backdrop-brightness-50 h-full">
             <h1 className="font-bold text-xl">
-              RCMI provides shelter for the refugees
+              RCMI provides help to children with health issues and defects.
             </h1>
             <div className="my-10 text-gray-400"> <a className="py-2 font-bold border-y-2 border-gray-400 ">Read More</a></div>
           </div>
