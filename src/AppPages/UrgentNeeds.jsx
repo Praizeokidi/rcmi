@@ -1,12 +1,14 @@
 import EyeImg from "../assets/gallery15.jpg";
 // import NeedImg2 from "../assets/give.jpg";
 import ChildImg from "../assets/pexels-jayb-11045177.jpg";
-// import NeedImg3 from "../assets/okay.jpeg";
+import NeedImg from "../assets/pexels-julian-cordero-386432806-29380333.jpg";
 import HeaderImg from "../components/Header";
 import RefugeesImg from "../assets/pexels-kublackphotography-10858384.jpg";
 import BibleImg from "../assets/gospel.jpg";
 import Newsletter from "../components/Newsletter";
 import { Link } from "react-router-dom";
+
+
 
 const UrgentNeeds = () => {
   return (
@@ -33,7 +35,7 @@ const UrgentNeeds = () => {
               </Link>
             </div>
             <div>
-              <img className="rounded " src={BibleImg} alt="Urgent Needs Header" />
+              <img className="rounded " src={NeedImg} alt="Urgent Needs Header" />
             </div>
           </div>
         </div>
@@ -49,7 +51,7 @@ const UrgentNeeds = () => {
               <div className="my-4  p-4  justify-items-center grid">
                 <img
                   className="h-72 p-4 hover:shadow-2xl transition-all hover:-translate-y-2 rounded"
-                  src={NeedImg1}
+                  src={BibleImg}
                 />
                 <p className="pb-4 ">$4,000 of $12,000 raised</p>
 
