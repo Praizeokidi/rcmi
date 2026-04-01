@@ -36,6 +36,8 @@ import {
   yourlogo,
 } from "../assets";
 
+import { Link } from "react-router-dom";
+
 export const navigation = [
   {
     id: "0",
@@ -361,6 +363,13 @@ export const countries = [
   // },
 ];
 
+{Link.map((item, index) => (
+  <Link key={index} to={item.link}>
+    {item.name}
+  </Link>
+))}
+
+
 export const footerLinks = [
   // {
   //   title: "Products",
@@ -376,7 +385,7 @@ export const footerLinks = [
   {
     title: "Help",
     links: [
-      { name: "About us", link: "/" },
+      { name: "About us", link: "/vision" },
       { name: "FAQs", link: "/" },
       { name: "How it works", link: "/" },
       { name: "Privacy policy", link: "/" },
