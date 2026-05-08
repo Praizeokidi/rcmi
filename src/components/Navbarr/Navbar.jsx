@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-import Logo from "../../assets/rcmil.svg";
+import Logo from "../../assets/rcmix.svg";
 // import Button from "../Button";
 
 function Navbar() {
