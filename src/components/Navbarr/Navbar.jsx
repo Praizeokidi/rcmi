@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-import Logo from "@/assets/rcmil.svg";
+// import Logo from "@/assets/rcmil.svg";
 // import Button from "../Button";
 
 function Navbar() {
@@ -37,11 +37,11 @@ function Navbar() {
           className="navbar-logo flex items-center"
           onClick={closeMobileMenu}
         >
-          <img
+          {/* <img
             src={Logo}
             alt="Refuge and Consolation Ministry International"
             className="h-14 md:h-16 w-auto object-contain"
-          />
+          /> */}
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
