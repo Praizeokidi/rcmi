@@ -1,4 +1,4 @@
-import { background } from "../../assets";
+// import { background } from "../../assets";
 import NavSlideImg from "../../assets/pexels-josh-michaels-80899-28833016.jpg";
 
 export const Rings = () => {

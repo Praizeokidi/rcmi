@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unknown-property */
+import nappyPic from "../images/pexels-nappy-3360204.jpg"
 import { useState } from "react"; // NEW
 import axios from "axios"; // NEW
 import { FaArrowCircleRight } from "react-icons/fa";
@@ -6,6 +7,7 @@ import eyeImg from "../assets/eye.jpg";
 import okayImg from "../images/okay.jpeg"
 import gallery17Img from "../images/gallery17.jpg"
 import gallery2Img from "../images/gallery2.jpeg"
+
 
 const ContactPage = () => {
 
@@ -60,7 +62,9 @@ const ContactPage = () => {
     <div>
 
       {/* HEADER */}
-      <div className="h-80 bg-[url('/images/pexels-nappy-3360204.jpg')] bg-center bg-cover bg-no-repeat relative overflow-x-hidden">
+      <div className="h-80 bg-center bg-cover bg-no-repeat relative overflow-x-hidden"
+        style={{ backgroundImage: `url(${nappyPic})` }}
+      >
         <div className="h-full backdrop-brightness-50">
           <div className="z-3 px-8 pt-24 flex flex-col justify-center items-center h-full text-center">
             <h1 className="font-bold text-white text-3xl mb-5">

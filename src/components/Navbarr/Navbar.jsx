@@ -1,9 +1,10 @@
+import Logoo from "../../assets/rcmil.svg";
 import React, { useState } from "react";
 // import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-// import Logo from "@/assets/rcmil.svg";
+
 // import Button from "../Button";
 
 function Navbar() {
@@ -34,14 +35,16 @@ function Navbar() {
       <nav className="navbar">
         <Link
           to="/"
-          className="navbar-logo flex items-center"
+          className="navbar-logo flex items-center h-full"
           onClick={closeMobileMenu}
         >
-          {/* <img
-            src={Logo}
-            alt="Refuge and Consolation Ministry International"
-            className="h-14 md:h-16 w-auto object-contain"
-          /> */}
+          <img
+            src={Logoo}
+            alt="RCMI Logo"
+            className="navbar-logo-img w-12 h-12 sm:w-16 sm:h-16 object-contain"
+          />
+
+
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -100,11 +103,11 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/sign-up"
+              to="/contact"
               className="nav-links-mobile"
               onClick={closeMobileMenu}
             >
-              Sign Up
+              Contact Us
             </Link>
           </li>
         </ul>

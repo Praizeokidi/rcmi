@@ -97,7 +97,6 @@ export {
   chromecast,
   sliders04,
   loading,
-  background,
   curve,
   robot,
   heroBackground,
