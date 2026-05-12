@@ -1,6 +1,7 @@
 import { useState } from "react"; // <-- add this at the top
 import Button from "../components/Button";
 import DonationImg from "../assets/donationimage.jpg";
+import { Link } from "react-router-dom";
 import CcImg from "../assets/cc.webp";
 import PityImg from "../assets/pexels-mikejudkins-1113533.jpg";
 import MinImg1 from "../assets/pexels-turan-sahi-n-428086655-20369382.jpg";
@@ -14,14 +15,14 @@ import DonateButton from "../components/DonateButton";
 
 const DonationPage = () => {
   const [amount, setAmount] = useState(""); // <-- state for input
-  
+
   return (
     <div>
- 
+
 
       <div className="grid md:px-10 items-center md:grid-cols-2 max-w-6xl m-auto py-10">
         <div className="p-8">
-          <h1 className="text-center leading-relaxed capitalize font-semibold text-4xl text-red-600">
+          <h1 className="text-center leading-relaxed capitalize font-semibold mt-10 text-4xl text-red-600">
             Give to help persecuted christians, reach the unreached and meet
             urgent needs for those in crisis
           </h1>
@@ -30,11 +31,11 @@ const DonationPage = () => {
             poor, the outcast and those Jesus would consider the least of my
             brothers."
           </p>
-          <a  
-          href="https://paystack.shop/pay/rcmi"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
+          <a
+            href="https://paystack.shop/pay/rcmi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
             Help Today!
           </a>
           <img className="py-2 w-52 m-auto" src={CcImg} />
@@ -142,13 +143,13 @@ const DonationPage = () => {
             </div>
             <div className="py-8">
               {" "}
-               <a  
-          href="https://paystack.shop/pay/rcmi"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
-            Help Today!
-          </a>
+              <a
+                href="https://paystack.shop/pay/rcmi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
+                Help Today!
+              </a>
               <img className="py-2 w-52 m-auto" src={CcImg} />
             </div>
           </div>
@@ -172,24 +173,42 @@ const DonationPage = () => {
         <div className="p-5 py-9">
           <h1 className="font-bold text-4xl">Make a donation</h1>
           <p className="my-8">
-            To learn more about make donate charity with us visit our “Contact
-            us” page or call 07060508070 for inquiry.
+            To learn more about make donate charity with us visit our {""}
+
+            <Link
+              to="/contact"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              Contact Us
+            </Link>{" "}
+
+
+            page or call{" "}
+
+            <a
+              href="tel:07060508070"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              07060508070
+            </a>{" "}
+
+            for inquiry.
           </p>
           <h1 className="font-bold text-2xl">Make a donation</h1>
-            <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
 
-          {/* Pass amount as a prop to DonateButton */}
-          <div className="mt-4">
-           <a
-  href="https://paystack.shop/pay/rcmi"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
->
-  DONATE NOW
-</a>
-          </div>
-        </form>
+            {/* Pass amount as a prop to DonateButton */}
+            <div className="mt-4">
+              <a
+                href="https://paystack.shop/pay/rcmi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
+              >
+                DONATE NOW
+              </a>
+            </div>
+          </form>
         </div>
       </div>
     </div>

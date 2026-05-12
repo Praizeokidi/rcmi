@@ -389,7 +389,7 @@ export const footerLinks = [
     links: [
       { name: "About us", link: "/vision-mission" },
       { name: "FAQs", link: "/" },
-      { name: "How it works", link: "/" },
+      { name: "How it works", link: "/donations" },
       { name: "Privacy policy", link: "/" },
       { name: "Payment policy", link: "/" },
     ],
@@ -397,8 +397,9 @@ export const footerLinks = [
   {
     title: "Get in touch",
     links: [
-      { name: "julienath@yahoo.com", link: "mailto:julienath@yahoo.com" },
-      { name: "+447462984955", link: "tel:+447462984955" },
+      { name: "info@rcmi.org.ng", link: "mailto:info@rcmi.org.ng" },
+      { name: "refugeandconsolationministryin@gmail.com", link: "mailto:refugeandconsolationministryin@gmail.com" },
+      { name: "+234 810 093 9299", link: "tel:+2348100939299" },
       { name: "+234 706 050 8070", link: "tel:+2347060508070" },
     ],
   },

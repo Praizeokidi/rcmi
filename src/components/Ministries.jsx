@@ -1,3 +1,5 @@
+import FoodImg from "../assets/feed.jpg";
+import SpiritImg from "../assets/spiritual.jpg";
 import MinImg1 from "../assets/pexels-turan-sahi-n-428086655-20369382.jpg";
 import MinImg2 from "../assets/gallery15.jpg";
 import MinImg3 from "../assets/pexels-emmages-8948347.jpg";
@@ -127,7 +129,7 @@ const Ministries = () => {
               <div className="hover:shadow-2xl hover:border-2 p-6 rounded">
                 <img
                   className="hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2 "
-                  src={MinImg1}
+                  src={FoodImg}
                 />
                 <p className="mt-8">January 18, 2024</p>
                 <p className="font-semibold text-lg">
@@ -145,7 +147,7 @@ const Ministries = () => {
               <div className="hover:shadow-2xl hover:border-2 p-6 rounded">
                 <img
                   className=" hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2"
-                  src={MinImg1}
+                  src={SpiritImg}
                 />
                 <p className="mt-8">July 30, 2024</p>
                 <p className="font-semibold text-lg">

@@ -4,39 +4,39 @@ import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  message: "",
-});
-
-const handleChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value,
+    name: "",
+    email: "",
+    message: "",
   });
-};
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/contact`,
-      formData
-    );
-
-    alert("Message sent successfully!");
-
+  const handleChange = (e) => {
     setFormData({
-      name: "",
-      email: "",
-      message: "",
+      ...formData,
+      [e.target.name]: e.target.value,
     });
-  // eslint-disable-next-line no-unused-vars
-  } catch (error) {
-    alert("Failed to send message");
-  }
-};
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/contact`,
+        formData
+      );
+
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      alert("Failed to send message");
+    }
+  };
 
   return (
     <div className="bg-gray-300">
@@ -59,22 +59,29 @@ const handleSubmit = async (e) => {
                     name="call-outline"
                     className="text-teal-300 text-xl"
                   ></ion-icon>
-                  <span>+44 7462 984 955</span>
+                  <span> +234 810 093 9299</span>
                 </div>
-
                 <div>
                   <ion-icon
                     name="call-outline"
                     className="text-teal-300 text-xl"
                   ></ion-icon>
-                  <span>+234 706 050 8070</span>
+                  <span> +234 706 050 8070</span>
+                </div>
+                <br />
+                <div>
+                  <ion-icon
+                    name="mail-open-outline"
+                    className="text-teal-300 text-xl"
+                  ></ion-icon>
+                  <span> info@rcmi.org.ng</span>
                 </div>
                 <div>
                   <ion-icon
                     name="mail-open-outline"
                     className="text-teal-300 text-xl"
                   ></ion-icon>
-                  <span>julienath@yahoo.com </span>
+                  <span> refugeandconsolationministryin@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -101,14 +108,14 @@ const handleSubmit = async (e) => {
                   </label>
                 </div>
                 <div>
-                 <input
-  type="text"
-  name="name"
-  value={formData.name}
-  onChange={handleChange}
-  placeholder="Your Name"
-  className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-/>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
+                  />
                 </div>
                 <div>
                   <label htmlFor="" className="text-sm">
@@ -116,14 +123,14 @@ const handleSubmit = async (e) => {
                   </label>
                 </div>
                 <div>
-                 <input
-  type="email"
-  name="email"
-  value={formData.email}
-  onChange={handleChange}
-  placeholder="Email Address"
-   className="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-/>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email Address"
+                    className="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
+                  />
                 </div>
                 <div>
                   <label htmlFor="" className="text-sm">
@@ -131,18 +138,18 @@ const handleSubmit = async (e) => {
                   </label>
                 </div>
                 <div>
-                 <textarea
-  name="message"
-  value={formData.message}
-  onChange={handleChange}
-  placeholder="Message"
-  rows="4"
-  className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-/>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Message"
+                    rows="4"
+                    className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
+                  />
                 </div>
                 <div>
                   <button type="submit" className="bg-cyan-400 rounded p-3 hover:bg-teal-400 transition-all hover:text-white text-black">Submit
-</button>
+                  </button>
                 </div>
               </form>
             </div>
