@@ -33,15 +33,20 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
+        {/* <span
+          className="navbar-logo flex items-center mt-3 text-white font-bold text-2xl sm:text-3xl tracking-wide"
+        >
+          RCMI
+        </span> */}
         <Link
           to="/"
-          className="navbar-logo flex items-center h-full"
-          onClick={closeMobileMenu}
+          className=" flex items-center h-full ml-8 sm:ml-10"
+
         >
           <img
             src={Logoo}
             alt="RCMI Logo"
-            className="navbar-logo-img w-12 h-12 sm:w-16 sm:h-16 object-contain"
+            className=" w-20 h-20 sm:w-24 sm:h-24 object-contain"
           />
 
 

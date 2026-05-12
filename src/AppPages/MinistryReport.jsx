@@ -11,16 +11,16 @@ const MinistryReport = () => {
   return (
     <div>
       <div>
-        <div className=" py-14 text-white text-center bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden p-6 space-y-8" style={{ backgroundImage: `url(${HeaderImg})` }}>
-          <h1 className="text-2xl font-bold  ">Ministry Reports</h1>
+        <div className="mt-20 py-14 text-white text-center bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden p-6 space-y-8" style={{ backgroundImage: `url(${HeaderImg})` }}>
+          <h1 className="text-4xl font-bold mt-7 ">Ministry Reports</h1>
           <p>Read Our Latest Ministry Reports Below :</p>
         </div>
         <div className="p-6 max-w-6xl m-auto">
           <div className="grid py-20 gap-16">
             <div className="gap-10 grid space-y-6 md:grid-cols-2">
               <div
-  className="relative bg-cover h-80 w-full"
-  style={{ backgroundImage: `url(${OkayImg})` }}>
+                className="relative bg-cover h-80 w-full"
+                style={{ backgroundImage: `url(${OkayImg})` }}>
                 <div className="absolute right-2 backdrop-brightness-50 top-3   text-white z-5...">
                   <p>Economic Empowerment Ministry, Ministry Reports</p>
                 </div>

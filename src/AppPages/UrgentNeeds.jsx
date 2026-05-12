@@ -1,4 +1,5 @@
 import EyeImg from "../assets/gallery15.jpg";
+import HelpImg from "../assets/help.jpg";
 import KidImg from "../assets/pexels-emmages-8948347.jpg";
 import ChildImg from "../assets/pexels-jayb-11045177.jpg";
 import NeedImg from "../assets/pexels-julian-cordero-386432806-29380333.jpg";
@@ -16,12 +17,21 @@ import { Link } from "react-router-dom";
 const UrgentNeeds = () => {
   return (
     <div>
-      <header className=" fixed ">{/* <Header /> */}</header>
-      <main>
-        <div className="bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden" style={{ backgroundImage: `url(${HeaderImg})` }}>
+      <div
+        className="relative w-full min-h-screen bg-center bg-cover bg-no-repeat bg-fixed overflow-x-hidden flex items-center justify-center"
+        style={{ backgroundImage: `url(${HelpImg})` }}
+      >
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* CONTENT CONTAINER */}
+        <div className="relative z-10 w-full max-w-6xl mx-4 sm:mx-8 lg:mx-auto bg-blue-200 rounded-2xl shadow-2xl overflow-hidden grid md:grid-cols-2 items-center">
+
+          {/* LEFT CONTENT */}
+          <div className="bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden" style={{ backgroundImage: `url(${HeaderImg})` }}>
           <div className="p-5 m-5 max-w-5xl lg:p-10 py-8 sm:m-9 md:m-16 rounded-xl lg:gap-2 mb-12 lg:mx-auto mt-36 bg-blue-200 grid gap-10 md:grid-cols-2 items-center">
             <div className="grid p-2 space-y-7">
-              <h1 className="font-extrabold text-2xl">Meet Urgent Needs</h1>
+              <h1 className="font-extrabold mt-7 text-2xl">Meet Urgent Needs</h1>
               <p className="lg:max-w-xs">
                 Every donation towards an urgent need makes an eternal
                 difference, bringing relief and hope to those facing
@@ -42,6 +52,40 @@ const UrgentNeeds = () => {
             </div>
           </div>
         </div>
+          <div className="p-8 sm:p-10 lg:p-14 space-y-6">
+            <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight text-gray-900">
+              Meet Urgent Needs
+            </h1>
+
+            <p className="text-gray-700 leading-relaxed max-w-lg">
+              Every donation towards an urgent need makes an eternal
+              difference, bringing relief and hope to those facing
+              unimaginable challenges. Whether it is ministering to those with
+              leprosy, sharing the Gospel, or responding to crisis, your
+              support matters. Choose from several urgent needs below and
+              donate today.
+            </p>
+
+            <Link
+              to="/donations"
+              className="inline-block text-center bg-green-500 hover:bg-green-600 hover:text-black transition duration-300 text-white font-semibold px-8 py-4 rounded-lg"
+            >
+              Meet an Urgent Need
+            </Link>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="h-full">
+            <img
+              className="w-full h-full object-cover md:min-h-[500px]"
+              src={NeedImg}
+              alt="Urgent Needs Header"
+            />
+          </div>
+        </div>
+      </div>
+      <main>
+        
 
         {/* Urgent Needs Cards */}
         <div className="p-5">

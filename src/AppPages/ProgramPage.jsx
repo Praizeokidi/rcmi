@@ -1,3 +1,4 @@
+import jibbyImg from "../images/pexels-jibarofoto-2014773.jpg";
 import Button from "../components/Button";
 import StormImg from "../assets/storm.jpg";
 import EmpowerImg from "../assets/empower1.jpg";
@@ -13,14 +14,15 @@ const ProgramPage = () => {
   return (
     <div>
       <div>
-        <div className=" py-14 text-white text-center bg-[url('/images/pexels-jibarofoto-2014773.jpg')]  bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden p-6 space-y-8 h-64 grid items-center">
-          <h1 className="text-2xl font-bold  ">Ministries </h1>
+        <div className=" py-14 mt-10 text-white text-center bg-center bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden p-6 space-y-8 h-64 grid items-center"
+          style={{ backgroundImage: `url(${jibbyImg})` }}>
+          <h1 className="text-4xl font-bold mt-5 ">Ministries </h1>
         </div>
         <div className="p-7 pt-24 ">
           <div className=" max-w-6xl m-auto grid gap-5 md:grid-cols-3">
             <div>
               <div>
-                <img className="h-64 w-full  " src={EmpowerImg} />
+                <img className="h-64 w-full  " src={StormImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">
@@ -35,7 +37,7 @@ const ProgramPage = () => {
             </div>
             <div>
               <div>
-                <img className="h-64  w-full " src={StormImg} />
+                <img className="h-64  w-full " src={EmpowerImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">
@@ -50,7 +52,7 @@ const ProgramPage = () => {
             </div>
             <div>
               <div>
-                <img className="h-64   w-full" src={EyeImg} />
+                <img className="h-64   w-full" src={GoodImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">
@@ -82,7 +84,7 @@ const ProgramPage = () => {
             </div>
             <div>
               <div>
-                <img className="h-64   w-full" src={EyescreenImg} />
+                <img className="h-64   w-full" src={SpiritualImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">
@@ -101,7 +103,7 @@ const ProgramPage = () => {
             </div>
             <div>
               <div>
-                <img className="h-64   w-full" src={SpiritualImg} />
+                <img className="h-64   w-full" src={EyescreenImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">
@@ -120,7 +122,7 @@ const ProgramPage = () => {
             </div>
             <div>
               <div>
-                <img className="h-64   w-full" src={GoodImg} />
+                <img className="h-64   w-full" src={EyeImg} />
               </div>
               <div className="p-9 text-center ">
                 <h1 className="font-bold mb-7 text-xl">

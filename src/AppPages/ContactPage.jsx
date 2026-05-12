@@ -83,7 +83,7 @@ const ContactPage = () => {
             and we will respond within one business day.
           </p>
 
-          <div className="grid my-10 md:grid-cols-2 gap-10 space-y-6 bg-cyan-700 w-full max-w-4xl m-auto p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
+          <div className="grid my-10 md:grid-cols-2 gap-10 space-y-6 bg-cyan-700 w-full max-w-5xl m-auto p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
 
             {/* CONTACT FORM */}
             <div className="relative">
@@ -146,7 +146,7 @@ const ContactPage = () => {
               <div className="space-y-6">
 
                 <div>
-                  <span>📞 +44 7462 984 955</span>
+                  <span>📞 +234 810 093 9299</span>
                 </div>
 
                 <div>
@@ -154,7 +154,9 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <span>✉️ julienath@yahoo.com</span>
+                  <span>✉️ info@rcmi.org.ng</span>
+                  <br />
+                  <span>✉️ refugeandconsolationministryin@gmail.com</span>
                 </div>
 
               </div>

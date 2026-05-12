@@ -1,3 +1,4 @@
+// import Logoo from "../assets/rcmil.svg";
 import { Link } from "react-router-dom";
 import cottonbroImg from '../images/pexels-cottonbro-4630674.jpg';
 
@@ -7,9 +8,23 @@ const Hero = () => {
       <div className="sm:h-screen  md:bg-[url('/images/pexels-jibarofoto-2014773.jpg')]  w-full h-[69rem] md:h-screen lg:h-screen  xl:h-screen bg-center bg-cover bg-no-repeat bg-fixed  overflow-x-hidden" style={{
         backgroundImage: `url(${cottonbroImg})`
       }}>
+
         <div className=" h-full m-auto w-full backdrop-brightness-50 ">
           <div>
             <div className="p-11 sm:px-15 sm:h-2/3 sm:pt-44 flex justify-items-center justify-between flex-col pt-32 h-2/3  md:ml-10 lg:ml-28  antialiased max-w-3xl text-white ">
+              {/* <Link
+                to="/"
+                className=" flex items-center h-full"
+
+              >
+                <img
+                  src={Logoo}
+                  alt="RCMI Logo"
+                  className=" w-20 h-20 sm:w-24 sm:h-24 object-contain"
+                />
+
+
+              </Link> */}
               <h1 className="text-4xl py-4  leading-relaxed tracking-wide font-bold">
                 Release, Rescue, and Restore Girls Trapped in Trafficking
               </h1>
