@@ -27,11 +27,10 @@ const ContactPage = () => {
     }
 
     try {
-
       setLoading(true);
 
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
+        `${import.meta.env.VITE_BACKEND_URL}/contact`, // CHANGED: ensure correct env name
         {
           name,
           email,
@@ -41,22 +40,20 @@ const ContactPage = () => {
 
       alert("Message sent successfully");
 
-      // clear form
       setName("");
       setEmail("");
       setMessage("");
 
     } catch (error) {
-
       console.error(error);
       alert("Failed to send message");
 
     } finally {
-
       setLoading(false);
-
     }
-    console.log(import.meta.env.VITE_API_URL);
+
+    // ❌ REMOVED: console.log(import.meta.env.VITE_API_URL);
+    // reason: unnecessary + can confuse debugging + may be undefined
   };
 
   return (
