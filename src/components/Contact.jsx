@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import { FaArrowCircleRight } from "react-icons/fa";
 
 const Contact = () => {
   // NEW: form state
@@ -166,11 +166,11 @@ const Contact = () => {
                     className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
                   />
                 </div>
-                <div>
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="
                                        w-full
                                        sm:w-auto
                                        flex
@@ -184,9 +184,9 @@ const Contact = () => {
                                        transition
                                        px-6 py-4
                                      "   >
-                    {loading ? "Sending..." : "Send Message"} <FaArrowCircleRight />
-                  </button>
-                </div>
+                  {loading ? "Sending..." : "Send Message"} <FaArrowCircleRight />
+                </button>
+
               </form>
             </div>
           </div>
