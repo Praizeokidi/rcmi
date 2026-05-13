@@ -1,71 +1,109 @@
 import { useState } from "react";
 import axios from "axios";
 
+// ✅ CHANGED: imported background image properly
+import nappyPic from "../images/pexels-nappy-3360204.jpg";
+
 const Newsletter = () => {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  // NEW: prevents multiple submissions and gives better UX
 
+  // ✅ CHANGED: added proper submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) {
+    // ✅ CHANGED: trims spaces from email input
+    if (!email.trim()) {
       alert("Please enter your email");
       return;
     }
 
     try {
 
-      setLoading(true); // NEW: disable button while sending request
+      setLoading(true);
 
+      // ✅ CHANGED:
+      // switched from VITE_API_URL to VITE_BACKEND_URL
+      // because your backend env variable is:
+      // VITE_BACKEND_URL=https://rcmi-backend.onrender.com
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/subscribe`,
+        `${import.meta.env.VITE_BACKEND_URL}/subscribe`,
         { email }
       );
 
       alert("Subscribed successfully!");
 
-      setEmail(""); // clears input after success
+      // ✅ CHANGED: clears input after success
+      setEmail("");
 
     } catch (error) {
 
-      console.error(error); // NEW: helpful for debugging
+      // ✅ CHANGED: better debugging
+      console.error("Newsletter Error:", error);
 
-      alert("Subscription failed");
+      // ✅ CHANGED: better error handling
+      if (error.response?.data?.message) {
+        alert(error.response.data.message);
+      } else {
+        alert("Subscription failed");
+      }
 
     } finally {
-      setLoading(false); // NEW: re-enable button
+
+      setLoading(false);
+
     }
   };
 
   return (
-    <div className="m-auto bg-[url('/images/pexels-nappy-3360204.jpg')] bg-center bg-cover bg-no-repeat overflow-x-hidden">
 
-      <div className="relative m-auto overflow-hidden py-16 sm:py-24 lg:py-32 backdrop-brightness-50">
+    // ✅ CHANGED:
+    // replaced bg-[url()] with imported image
+    // because Vite sometimes fails resolving dynamic image paths in production
+    <div
+      className="m-auto bg-center bg-cover bg-no-repeat overflow-x-hidden"
+      style={{ backgroundImage: `url(${nappyPic})` }}
+    >
 
-        <div className="mx-auto isolate max-w-6xl px-6 lg:px-8">
+      <div className="relative m-auto py-16 sm:py-24 lg:py-32 backdrop-brightness-50">
+
+        <div className="mx-auto isolate w-full max-w-6xl px-4 sm:px-6 lg:px-8">
 
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
 
-            <div className="max-w-xl lg:max-w-lg">
+            <div className="w-full max-w-xl lg:max-w-lg">
 
               <h2 className="text-4xl font-semibold tracking-tight text-white">
                 Subscribe to our newsletter
               </h2>
 
               <p className="mt-4 text-lg text-white">
-                Stay Updated: Subscribe to receive the latest news, tips, and
-                exclusive content directly in your inbox
+                Stay Updated: Subscribe to receive the latest news,
+                tips, and exclusive content directly in your inbox
               </p>
 
-              {/* NEW: form wrapper so handleSubmit works */}
-              <form onSubmit={handleSubmit} className="mt-6 flex max-w-md gap-x-4">
+              {/* ✅ CHANGED: proper form wrapper */}
+              <form
+                onSubmit={handleSubmit}
+                className="
+    mt-6
+    flex
+    flex-col
+    sm:flex-row
+    w-full
+    gap-4
+  "
+              >
 
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
 
+                {/* ✅ CHANGED:
+      removed flex-1 and max-width issues
+      added min-w-0 to prevent overflow on mobile
+  */}
                 <input
                   id="email-address"
                   name="email"
@@ -73,38 +111,79 @@ const Newsletter = () => {
                   autoComplete="email"
                   required
                   value={email}
-                  // NEW: connects input to React state
-
                   onChange={(e) => setEmail(e.target.value)}
-                  // NEW: updates state when user types
-
-                  className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-indigo-500 sm:text-sm/6"
+                  className="
+      min-w-0
+      w-full
+      rounded-md
+      border-0
+      bg-white/10
+      px-3.5
+      py-3
+      text-white
+      placeholder:text-gray-300
+      shadow-sm
+      ring-1
+      ring-inset
+      ring-white/20
+      focus:ring-2
+      focus:ring-indigo-500
+      outline-none
+    "
                   placeholder="Enter your email"
                 />
 
+                {/* ✅ CHANGED:
+      forced full width on mobile
+      added shrink-0 so button cannot collapse
+  */}
                 <button
                   type="submit"
                   disabled={loading}
-                  // NEW: prevents multiple clicks while request is running
-
-                  className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 disabled:opacity-50"
+                  className="
+  w-full
+  sm:w-auto
+  block
+  rounded-md
+  bg-indigo-500
+  px-5
+  py-3
+  text-sm
+  font-semibold
+  text-white
+  shadow-sm
+  hover:bg-indigo-400
+  transition
+  disabled:opacity-50
+"
                 >
                   {loading ? "Subscribing..." : "Subscribe"}
-                  {/* NEW: shows loading text */}
                 </button>
 
               </form>
 
             </div>
 
-            {/* Feature section */}
+            {/* FEATURES */}
             <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
 
               <div className="flex flex-col items-start">
 
                 <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
 
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"></path></svg>
+                  <svg
+                    className="h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25"
+                    />
+                  </svg>
 
                 </div>
 
@@ -122,7 +201,20 @@ const Newsletter = () => {
 
                 <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
 
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon"><path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002"></path></svg>
+                  <svg
+                    className="h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3"
+                    />
+                  </svg>
+
                 </div>
 
                 <dt className="mt-4 text-base font-semibold text-white">
