@@ -3,39 +3,49 @@ import axios from "axios";
 
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // NEW: form state
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+  // NEW: submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!name || !email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
     try {
+      setLoading(true);
+
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
-        formData
+        `${import.meta.env.VITE_BACKEND_URL}/contact`, // CHANGED: ensure correct env name
+        {
+          name,
+          email,
+          message
+        }
       );
 
-      alert("Message sent successfully!");
+      alert("Message sent successfully");
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-      // eslint-disable-next-line no-unused-vars
+      setName("");
+      setEmail("");
+      setMessage("");
+
     } catch (error) {
+      console.error(error);
       alert("Failed to send message");
+
+    } finally {
+      setLoading(false);
     }
+
+    // ❌ REMOVED: console.log(import.meta.env.VITE_API_URL);
+    // reason: unnecessary + can confuse debugging + may be undefined
   };
 
   return (
@@ -120,8 +130,8 @@ const Contact = () => {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="Your Name"
                     className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
                   />
@@ -135,8 +145,8 @@ const Contact = () => {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email Address"
                     className="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
                   />
@@ -149,16 +159,35 @@ const Contact = () => {
                 <div>
                   <textarea
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder="Message"
                     rows="4"
                     className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
                   />
                 </div>
                 <div>
-                  <a href="/" className=" bg-cyan-400 rounded  p-4  hover:bg-teal-400 transition-all hover:text-white text-black">Submit</a>
-                </div>  </form>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="
+                                       w-full
+                                       sm:w-auto
+                                       flex
+                                       gap-3
+                                       items-center
+                                       justify-center
+                                       bg-teal-300
+                                       rounded
+                                       hover:bg-green-600
+                                       hover:text-black
+                                       transition
+                                       px-6 py-4
+                                     "   >
+                    {loading ? "Sending..." : "Send Message"} <FaArrowCircleRight />
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
