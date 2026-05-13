@@ -31,7 +31,7 @@ const ContactPage = () => {
       setLoading(true);
 
       await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/contact`,
+        `${import.meta.env.VITE_API_URL}/contact`,
         {
           name,
           email,
@@ -56,8 +56,9 @@ const ContactPage = () => {
       setLoading(false);
 
     }
+    console.log(import.meta.env.VITE_API_URL);
   };
-  console.log(import.meta.env.VITE_BACKEND_URL);
+
   return (
     <div>
 

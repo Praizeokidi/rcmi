@@ -3,41 +3,41 @@ import axios from "axios";
 
 const Newsletter = () => {
 
-const [email, setEmail] = useState("");
-const [loading, setLoading] = useState(false); 
-// NEW: prevents multiple submissions and gives better UX
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  // NEW: prevents multiple submissions and gives better UX
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if(!email){
-    alert("Please enter your email");
-    return;
-  }
+    if (!email) {
+      alert("Please enter your email");
+      return;
+    }
 
-  try {
+    try {
 
-    setLoading(true); // NEW: disable button while sending request
+      setLoading(true); // NEW: disable button while sending request
 
-    await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/subscribe`,
-      { email }
-    );
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/subscribe`,
+        { email }
+      );
 
-    alert("Subscribed successfully!");
+      alert("Subscribed successfully!");
 
-    setEmail(""); // clears input after success
+      setEmail(""); // clears input after success
 
-  } catch (error) {
+    } catch (error) {
 
-    console.error(error); // NEW: helpful for debugging
+      console.error(error); // NEW: helpful for debugging
 
-    alert("Subscription failed");
+      alert("Subscription failed");
 
-  } finally {
-    setLoading(false); // NEW: re-enable button
-  }
-};
+    } finally {
+      setLoading(false); // NEW: re-enable button
+    }
+  };
 
   return (
     <div className="m-auto bg-[url('/images/pexels-nappy-3360204.jpg')] bg-center bg-cover bg-no-repeat overflow-x-hidden">
@@ -72,10 +72,10 @@ const handleSubmit = async (e) => {
                   type="email"
                   autoComplete="email"
                   required
-                  value={email} 
+                  value={email}
                   // NEW: connects input to React state
 
-                  onChange={(e) => setEmail(e.target.value)} 
+                  onChange={(e) => setEmail(e.target.value)}
                   // NEW: updates state when user types
 
                   className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-indigo-500 sm:text-sm/6"
@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
 
                 <button
                   type="submit"
-                  disabled={loading} 
+                  disabled={loading}
                   // NEW: prevents multiple clicks while request is running
 
                   className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 disabled:opacity-50"
@@ -104,7 +104,7 @@ const handleSubmit = async (e) => {
 
                 <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
 
-                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"></path></svg>
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"></path></svg>
 
                 </div>
 
