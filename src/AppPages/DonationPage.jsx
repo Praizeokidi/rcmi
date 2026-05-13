@@ -32,7 +32,7 @@ const DonationPage = () => {
             brothers."
           </p>
           <a
-            href="https://paystack.shop/pay/rcmi"
+            href="https://paystack.shop/pay/rcmi-donations"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
@@ -47,7 +47,7 @@ const DonationPage = () => {
       <div className="max-w-6xl m-auto p-8">
         <div>
           <h1 className="capitalize text-5xl font-bold text-red-800 text-center leading-relaxed">
-            How You make difference
+            How You make a difference
           </h1>
           <div className="text-gray-500 py-8">
             <p>
@@ -144,7 +144,7 @@ const DonationPage = () => {
             <div className="py-8">
               {" "}
               <a
-                href="https://paystack.shop/pay/rcmi"
+                href="https://paystack.shop/pay/rcmi-donations"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
@@ -173,7 +173,7 @@ const DonationPage = () => {
         <div className="p-5 py-9">
           <h1 className="font-bold text-4xl">Make a donation</h1>
           <p className="my-8">
-            To learn more about make donate charity with us visit our {""}
+            To learn more about making charity donations with us visit our {""}
 
             <Link
               to="/contact"
@@ -200,7 +200,7 @@ const DonationPage = () => {
             {/* Pass amount as a prop to DonateButton */}
             <div className="mt-4">
               <a
-                href="https://paystack.shop/pay/rcmi"
+                href="https://paystack.shop/pay/rcmi-donations"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"

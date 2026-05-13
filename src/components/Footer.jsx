@@ -5,7 +5,7 @@ import Logoo from "../assets/rcmil.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white lg:p-20 p-10 max-container">
+    <footer className="bg-black text-white lg:p-20 px-4 py-10 overflow-x-hidden">
 
       {/* ================= TOP SECTION ================= */}
       <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         {/* ================= RIGHT LINKS (MODIFIED: pushed slightly right) ================= */}
-        <div className="flex flex-1 justify-end lg:gap-36 gap-20 flex-wrap pl-6 lg:pl-12"> {/* MODIFIED: added justify-end + padding-left */}
+        <div className="flex flex-1 flex-wrap justify-start lg:justify-end gap-8 lg:gap-36 w-full lg:w-auto lg:-ml-10"> {/* MODIFIED: added justify-end + padding-left */}
           {footerLinks.map((section) => (
             <div key={section.title}>
               <h4 className="font-montserrat text-2xl leading-normal font-medium mb-6 text-white">
@@ -85,7 +85,7 @@ const Footer = () => {
       <div className="flex justify-end items-center gap-3 mt-24 text-white-400 max-sm:flex-col max-sm:items-center max-sm:gap-1">
         {/* MODIFIED: justify-end + reduced gap */}
 
-        <div className="flex items-center gap-2 font-montserrat">
+        <div className="flex items-center gap-2 font-montserrat whitespace-nowrap">
           <img
             src={copyrightSign}
             alt="copyright sign"

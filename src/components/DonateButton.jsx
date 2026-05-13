@@ -4,7 +4,7 @@ const DonateButton = ({ amount }) => {
 
   const handleDonate = () => {
     // Redirect to Paystack payment link
-    window.location.href = "https://paystack.shop/pay/rcmi";
+    window.location.href = "https://paystack.shop/pay/rcmi-donations";
   };
 
   return (

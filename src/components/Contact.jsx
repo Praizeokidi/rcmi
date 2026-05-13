@@ -39,13 +39,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-300">
+    <div className="bg-gray-300 min-h-screen overflow-y-auto">
       {" "}
-      <div className="py-12 p-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-cyan-700 w-full m-auto max-w-6xl p-6 sm:p-10 rounded-xl shadow-lg text-white overflow-hidden">
-          <div className="flex space-y-8 flex-col p-6 justify-between">
+      <div className="py-8 px-4 sm:py-12 sm:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-cyan-700 w-full mx-auto max-w-6xl p-4 sm:p-10 rounded-xl shadow-lg text-white">
+          <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6">
             <div>
-              <h1 className="font-bold text-4xl tracking-wide mb-4 hover:text-orange-600 hover:-translate-y-2 transition-all">
+              <h1 className="font-bold text-2xl sm:text-4xl tracking-wide mb-4">
                 Contact RCMI
               </h1>
               <p className="pt-2 mb-6 text-cyan-100 text-sm">
@@ -74,14 +74,23 @@ const Contact = () => {
                     name="mail-open-outline"
                     className="text-teal-300 text-xl"
                   ></ion-icon>
-                  <span> info@rcmi.org.ng</span>
+
+                  <a
+                    href="mailto:refugeandconsolationministryin@gmail.com"
+                    className="break-all text-sm"
+                  >   info@rcmi.org.ng
+                  </a>
                 </div>
                 <div>
                   <ion-icon
                     name="mail-open-outline"
                     className="text-teal-300 text-xl"
                   ></ion-icon>
-                  <span> refugeandconsolationministryin@gmail.com</span>
+                  <a
+                    href="mailto:refugeandconsolationministryin@gmail.com"
+                    className="break-all text-sm"
+                  >   refugeandconsolationministryin@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -97,11 +106,11 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute w-40 h-40 bg-teal-400 rounded-full -right-28 -top-28"></div>
-            <div className="absolute w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-24"></div>
-            <div className="relative z-10 bg-white rounded-xl shadow-lg p-8  text-gray-600">
-              <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+          <div className="relative overflow-visible">
+            <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -right-28 -top-28"></div>
+            <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-24"></div>
+            <div className="relative z-10 bg-white rounded-xl shadow-lg p-5 sm:p-8 text-gray-600 overflow-visible">
+              <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full pb-6">
                 <div>
                   <label htmlFor="" className="text-sm">
                     Your name
@@ -148,10 +157,8 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <button type="submit" className="bg-cyan-400 rounded p-3 hover:bg-teal-400 transition-all hover:text-white text-black">Submit
-                  </button>
-                </div>
-              </form>
+                  <a href="/" className=" bg-cyan-400 rounded  p-4  hover:bg-teal-400 transition-all hover:text-white text-black">Submit</a>
+                </div>  </form>
             </div>
           </div>
         </div>

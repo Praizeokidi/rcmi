@@ -17,6 +17,14 @@
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
 /* @layer base {
   body {
     @apply font-sans bg-n-8 text-n-1 text-base;
