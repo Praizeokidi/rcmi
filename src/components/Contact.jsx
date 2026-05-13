@@ -1,13 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,9 +20,16 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill all fields");
+      return;
+    }
+
     try {
+      setLoading(true);
+
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`,
+        `${import.meta.env.VITE_BACKEND_URL}/contact`, // FIXED: must match Vercel env
         formData
       );
 
@@ -32,134 +40,74 @@ const Contact = () => {
         email: "",
         message: "",
       });
-      // eslint-disable-next-line no-unused-vars
+
     } catch (error) {
+      console.error(error);
       alert("Failed to send message");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="bg-gray-300 min-h-screen overflow-y-auto">
-      {" "}
       <div className="py-8 px-4 sm:py-12 sm:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-cyan-700 w-full mx-auto max-w-6xl p-4 sm:p-10 rounded-xl shadow-lg text-white">
-          <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6">
-            <div>
-              <h1 className="font-bold text-2xl sm:text-4xl tracking-wide mb-4">
-                Contact RCMI
-              </h1>
-              <p className="pt-2 mb-6 text-cyan-100 text-sm">
-                Send us a message and we will do well to reach out
-              </p>
-            </div>
-            <div className="  space-y-6">
-              <div className="grid justify-start space-x-2 items-center">
-                <div>
-                  <ion-icon
-                    name="call-outline"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
-                  <span> +234 810 093 9299</span>
-                </div>
-                <div>
-                  <ion-icon
-                    name="call-outline"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
-                  <span> +234 706 050 8070</span>
-                </div>
-                <br />
-                <div>
-                  <ion-icon
-                    name="mail-open-outline"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
 
-                  <a
-                    href="mailto:refugeandconsolationministryin@gmail.com"
-                    className="break-all text-sm"
-                  >   info@rcmi.org.ng
-                  </a>
-                </div>
-                <div>
-                  <ion-icon
-                    name="mail-open-outline"
-                    className="text-teal-300 text-xl"
-                  ></ion-icon>
-                  <a
-                    href="mailto:refugeandconsolationministryin@gmail.com"
-                    className="break-all text-sm"
-                  >   refugeandconsolationministryin@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="flex space-x-4 text-lg">
-              <a href="https://www.facebook.com/Refuge-and-Consolation-Ministry-International-102556255649354/">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-              <a href="https://www.instagram.com/invites/contact/?i=1dlxlloqpy900&utm_content=npiq5pv">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-              <a href="#">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-cyan-700 w-full mx-auto max-w-6xl p-4 sm:p-10 rounded-xl shadow-lg text-white">
+
+          {/* LEFT SIDE */}
+          <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6">
+            <h1 className="font-bold text-2xl sm:text-4xl">
+              Contact RCMI
+            </h1>
+            <p className="text-cyan-100">
+              Send us a message and we will respond shortly
+            </p>
           </div>
-          <div className="relative overflow-visible">
-            <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -right-28 -top-28"></div>
-            <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-24"></div>
-            <div className="relative z-10 bg-white rounded-xl shadow-lg p-5 sm:p-8 text-gray-600 overflow-visible">
-              <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full pb-6">
-                <div>
-                  <label htmlFor="" className="text-sm">
-                    Your name
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your Name"
-                    className="ring-1 ring-gray-300 w-full mt-2 rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="" className="text-sm">
-                    Email Address
-                  </label>
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                    className="ring-1 ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="" className="text-sm">
-                    Message
-                  </label>
-                </div>
-                <div>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Message"
-                    rows="4"
-                    className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300"
-                  />
-                </div>
-                <div>
-                  <a href="/" className=" bg-cyan-400 rounded  p-4  hover:bg-teal-400 transition-all hover:text-white text-black">Submit</a>
-                </div>  </form>
-            </div>
+
+          {/* FORM */}
+          <div className="bg-white rounded-xl shadow-lg p-5 sm:p-8 text-gray-600">
+
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2"
+              />
+
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address"
+                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2"
+              />
+
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message"
+                rows="4"
+                className="ring-1 ring-gray-300 w-full rounded-md px-4 py-2"
+              />
+
+              {/* FIXED BUTTON */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="bg-cyan-400 p-4 rounded hover:bg-teal-500 transition text-black font-semibold"
+              >
+                {loading ? "Sending..." : "Submit"}
+              </button>
+
+            </form>
+
           </div>
         </div>
       </div>
