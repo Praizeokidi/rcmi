@@ -5,7 +5,7 @@ import cottonbroImg from '../images/pexels-cottonbro-4630674.jpg';
 const Hero = () => {
   return (
     <div>
-      <div className="sm:h-screen  md:bg-[url('/images/pexels-jibarofoto-2014773.jpg')]  w-full h-[69rem] md:h-screen lg:h-screen  xl:h-screen bg-center bg-cover bg-no-repeat bg-fixed  overflow-x-hidden" style={{
+      <div className="sm:h-screen w-full h-[69rem] md:h-screen lg:h-screen  xl:h-screen bg-center bg-cover bg-no-repeat bg-fixed  overflow-x-hidden" style={{
         backgroundImage: `url(${cottonbroImg})`
       }}>
 
