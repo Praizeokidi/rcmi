@@ -1,7 +1,8 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
 // import Footerr from "./components/Footer1";
 import Header from "./components/Header";
-
+import PaymentPolicy from "./AppPages/PaymentPolicy";
+import PrivacyPolicy from "./AppPages/PrivacyPolicy";
 import { Route, Routes } from "react-router-dom";
 import Home from "./AppPages/Home";
 import ProgramPage from "./AppPages/ProgramPage";
@@ -15,6 +16,7 @@ import UrgentNeeds from "./AppPages/UrgentNeeds";
 import MinistryReport from "./AppPages/MinistryReport";
 import Vision from "./AppPages/Vision";
 import Navbar from "./components/Navbarr/Navbar";
+import FAQ from "./AppPages/FAQ";
 // import Headerr from "./components/Headerr";
 
 
@@ -40,6 +42,9 @@ const App = () => {
           <Route path="/urgentneeds" element={<UrgentNeeds />} />
           <Route path="/blog" element={<MinistryReport />} />
           <Route path="/vision-mission" element={<Vision />} />
+          <Route path="/payment-policy" element={<PaymentPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/faqs" element={<FAQ />} />
         </Routes>
       </div>
       <ButtonGradient />

@@ -14,21 +14,7 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
 
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
 
   return (
     <>
@@ -56,18 +42,52 @@ function Navbar() {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            className="nav-item relative"
+            onMouseEnter={() => {
+              if (window.innerWidth >= 960) {
+                setDropdown(true);
+              }
+            }}
+            onMouseLeave={() => {
+              if (window.innerWidth >= 960) {
+                setDropdown(false);
+              }
+            }}
           >
-            <Link
-              to="/vision-mission"
-              className="nav-links text-base"
-              onClick={closeMobileMenu}
-            >
-              About Us <i className="fas fa-caret-down" />
-            </Link>
+
+            {/* ABOUT US ROW */}
+            <div className="w-full flex items-center justify-between">
+
+              {/* TEXT LINK */}
+              <Link
+                to="/vision-mission"
+                className="nav-links text-base"
+                onClick={closeMobileMenu}
+              >
+                About Us
+              </Link>
+
+              {/* DROPDOWN ARROW */}
+              <button
+                type="button"
+                className="text-white ml-1 cursor-pointer p-0 bg-transparent border-none"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setDropdown((prev) => !prev);
+                }}
+              >
+                <i
+                  className={`fas fa-caret-down transition-transform duration-300 ${dropdown ? "rotate-180" : ""
+                    }`}
+                />
+              </button>
+
+            </div>
+
+            {/* DROPDOWN MENU */}
             {dropdown && <Dropdown />}
+
           </li>
 
           <li className="nav-item">

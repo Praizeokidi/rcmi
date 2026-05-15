@@ -70,6 +70,11 @@
   display: none;
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
@@ -156,7 +161,45 @@
     transition: 250ms;
   }
 
-  button {
-    display: none;
+  /* ✅ CHANGED:
+   allow nav item to expand when dropdown opens
+*/
+  .nav-item {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ✅ CHANGED:
+   keeps arrow beside About Us instead of far right
+*/
+  .nav-item .flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* ✅ NEW:
+   dropdown button visible + clickable
+*/
+  .nav-item button {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  /* ✅ NEW:
+   dropdown fills mobile menu width properly
+*/
+  .dropdown-menu {
+    width: 100%;
+    position: static;
   }
 }
