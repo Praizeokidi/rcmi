@@ -76,7 +76,7 @@ const ProgramPage = () => {
           </p>
 
           <h1 className="text-5xl md:text-6xl font-black text-white mt-4">
-            Transformational Programs
+            Our Programs
           </h1>
 
           <p className="mt-6 text-gray-200 leading-relaxed">

@@ -30,6 +30,7 @@
 
 .nav-menu {
   display: flex;
+  flex-direction: row;
   grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
@@ -92,12 +93,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: auto;
     position: absolute;
     top: 80px;
     left: -100%;
+    background: #0b1220;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
   }
 
   .nav-menu.active {
@@ -106,6 +109,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    padding: 20px 0;
   }
 
   .nav-links {
@@ -168,7 +172,9 @@
     height: auto;
     width: 100%;
     flex-direction: column;
+    text-align: left;
     align-items: flex-start;
+    padding: 14px 20px;
   }
 
   /* ✅ CHANGED:

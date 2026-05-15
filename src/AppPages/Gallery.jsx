@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import BgMain from "../images/main-bcg.jpeg";
 import StormImg from "../assets/storm.jpg";
@@ -202,8 +203,9 @@ const Gallery = () => {
           </p>
 
           <div className="mt-10">
-            <a
-              href="/donations"
+
+            <Link
+              to="/donations"
               className="
           inline-block
           bg-green-500
@@ -217,10 +219,11 @@ const Gallery = () => {
           transition-all
           duration-300
           hover:-translate-y-1
-        "
-            >
+        ">
               Support This Mission
-            </a>
+            </Link>
+
+
           </div>
 
         </div>
