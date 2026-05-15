@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Volunteer = () => {
   return (
@@ -25,12 +26,12 @@ const Volunteer = () => {
 
           {/* CTA */}
           <div className="mt-10 flex justify-center">
-            <Button
-              href="/contact"
-              className="px-8 py-4 text-lg bg-green-500 hover:bg-green-600 transition-all shadow-xl hover:shadow-2xl rounded-xl"
-            >
+
+            <Link
+              to="/contact"
+              className="px-8 py-4 text-lg bg-green-500 hover:bg-green-600 transition-all shadow-xl hover:shadow-2xl rounded-xl">
               BECOME A VOLUNTEER
-            </Button>
+            </Link>
           </div>
 
         </div>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { motion, AnimatePresence } from "framer-motion";
 import BgMain from "../images/main-bcg.jpeg";
 
@@ -244,23 +246,25 @@ const FAQ = () => {
                         donations, volunteering, outreach programs, or partnership inquiries.
                     </p>
 
-                    <a
-                        href="/contact"
+                    <Link
+                        to="/contact"
                         className="
-              inline-block
-              mt-8
-              bg-green-500
-              hover:bg-green-600
-              px-8
-              py-4
-              rounded-xl
-              font-semibold
-              transition
-              shadow-lg
-            "
+          inline-block
+          bg-green-500
+          hover:bg-green-600
+          text-black
+          font-semibold
+          px-10
+          py-4
+          rounded-2xl
+          shadow-lg
+          transition-all
+          duration-300
+          hover:-translate-y-1
+        "
                     >
                         Contact Us
-                    </a>
+                    </Link>
 
                 </motion.div>
 

@@ -71,10 +71,10 @@ const PaymentPolicy = () => {
                             className="
                 border
                 border-white/30
-                bg-white/10
+                bg-gray/10
                 backdrop-blur-md
                 hover:bg-white/20
-                text-white
+                text-black
                 font-semibold
                 px-8
                 py-4
