@@ -55,12 +55,15 @@ const Hero = () => {
               Donate Now
             </Link>
 
-            <a
-              href="/urgentneeds"
+            <Link
+              to="/urgentneeds"
               className="border border-white/30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition"
             >
               Learn More
-            </a>
+            </Link>
+
+
+
 
           </div>
 
