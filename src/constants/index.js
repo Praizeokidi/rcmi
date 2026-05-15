@@ -387,11 +387,12 @@ export const footerLinks = [
   {
     title: "Help",
     links: [
-      { name: "About us", link: "/vision-mission" },
+      { name: "About us", link: "/about" },
       { name: "FAQs", link: "/faqs" },
       { name: "How it works", link: "/donations" },
       { name: "Privacy policy", link: "/privacy-policy" },
       { name: "Payment policy", link: "/payment-policy" },
+      { name: "Strategy", link: "/strategy" },
     ],
   },
   {

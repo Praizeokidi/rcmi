@@ -19,9 +19,9 @@ const Home = () => {
         <Partners />
         <Ministries />
         {/* <About /> */}
-        {/* <Programs /> */}
-        {/* <Strategy /> */}
-        {/* <Volunteer /> */}
+        {/* <Programs />
+        <Strategy /> */}
+        <Volunteer />
 
         <Message />
         <Contact />

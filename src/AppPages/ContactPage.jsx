@@ -38,7 +38,7 @@ const ContactPage = () => {
         }
       );
 
-      alert("Message sent successfully");
+      alert("Thanks for contacting us. An email will be sent to you shortly");
 
       setName("");
       setEmail("");

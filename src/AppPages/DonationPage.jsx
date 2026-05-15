@@ -1,7 +1,6 @@
-import { useState } from "react"; // <-- add this at the top
-import Button from "../components/Button";
-import DonationImg from "../assets/donationimage.jpg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import DonationImg from "../assets/donationimage.jpg";
 import CcImg from "../assets/cc.webp";
 import PityImg from "../assets/pexels-mikejudkins-1113533.jpg";
 import MinImg1 from "../assets/pexels-turan-sahi-n-428086655-20369382.jpg";
@@ -11,206 +10,487 @@ import MinImg4 from "../assets/pexels-safari-consoler-3290243-25228111.jpg";
 import MinImg5 from "../assets/pexels-justin-muhinda-1340590076-25457343.jpg";
 import MinImg6 from "../assets/pexels-jibarofoto-2774546.jpg";
 import PityImg2 from "../assets/pexels-julian-cordero-386432806-29380333.jpg";
-import DonateButton from "../components/DonateButton";
+import BgMain from "../images/main-bcg.jpeg";
+
+const ministryAreas = [
+  {
+    image: MinImg1,
+    title: "Reach Unreached People Groups",
+  },
+  {
+    image: MinImg2,
+    title: "Medical Outreach & Eye Care",
+  },
+  {
+    image: MinImg3,
+    title: "Raise Disciples & Leaders",
+  },
+  {
+    image: MinImg4,
+    title: "Emergency & Disaster Response",
+  },
+  {
+    image: MinImg5,
+    title: "Provide Hope for Children",
+  },
+  {
+    image: MinImg6,
+    title: "Support Persecuted Christians",
+  },
+];
 
 const DonationPage = () => {
-  const [amount, setAmount] = useState(""); // <-- state for input
-
   return (
-    <div>
+    <div className="bg-[#F8FAFC] overflow-x-hidden mt-27">
 
+      {/* HERO SECTION */}
+      <div
+        className="relative h-[90vh] min-h-[700px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${DonationImg})` }}
+      >
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
 
-      <div className="grid md:px-10 items-center md:grid-cols-2 max-w-6xl m-auto py-10">
-        <div className="p-8">
-          <h1 className="text-center leading-relaxed capitalize font-semibold mt-10 text-4xl text-red-600">
-            Give to help persecuted christians, reach the unreached and meet
-            urgent needs for those in crisis
-          </h1>
-          <p className="text-gray-500 py-7 tracking-normal leading-9">
-            Your money goes to meet both practical and spiritual needs of the
-            poor, the outcast and those Jesus would consider the least of my
-            brothers."
-          </p>
-          <a
-            href="https://paystack.shop/pay/rcmi-donations"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
-            Help Today!
-          </a>
-          <img className="py-2 w-52 m-auto" src={CcImg} />
-        </div>
-        <div className="p-8">
-          <img className="rounded-full" src={PityImg} />
-        </div>
-      </div>
-      <div className="max-w-6xl m-auto p-8">
-        <div>
-          <h1 className="capitalize text-5xl font-bold text-red-800 text-center leading-relaxed">
-            How You make a difference
-          </h1>
-          <div className="text-gray-500 py-8">
-            <p>
-              Your gifts have an unparraled impact because of our trusted
-              partners around the world. His Feet has spent decades working in
-              some of the most unreached nations of the world. This time has
-              resulted in deep and lasting relationships with trusted partners
-              in some of the worlds hardest to reach places.
-            </p>
-            <br></br>
-            <p>
-              Together we are partnered with them and want to help them reach as
-              many people as possible. Through these unique partnerships we are
-              able to help in areas where other don’t have access.
-            </p>
-            <br></br>
-            <p>Here are the primary ministry areas where we work.</p>
-          </div>
-          <div className="bg-white  p-10 text-black">
-            <div className="grid   md:grid-cols-2 gap-7 lg:grid-cols-3 max-w-6xl m-auto ">
-              <div className="justify-items-center grid ">
-                <a href="/">
-                  <img
-                    className="rounded-lg hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg1}
-                  />
-                  <p className=" uppercase underline my-3 hover:text-blue-700">
-                    Reach Unreached people groups{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-              <div className="justify-items-center grid">
-                <a href="/">
-                  <img
-                    className=" shadow-lg rounded-lg hover:shadow-2xl transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg2}
-                  />
-                  <p className="uppercase underline my-3 hover:text-blue-700">
-                    Minister to victims of glycoma and eye defects{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-              <div className="justify-items-center grid">
-                <a href="/">
-                  <img
-                    className="shadow-lg rounded-lg hover:shadow-2xl transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg3}
-                  />
-                  <p className="uppercase underline my-3 hover:text-blue-700">
-                    Raise up disciples and leaders{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-              <div className="justify-items-center grid">
-                <a href="/">
-                  <img
-                    className="shadow-lg rounded-lg hover:shadow-2xl transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg4}
-                  />
-                  <p className="uppercase underline my-3 hover:text-blue-700">
-                    Respond to disasters{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-              <div className="justify-items-center grid">
-                <a href="/">
-                  <img
-                    className=" shadow-lg rounded-lg hover:shadow-2xl transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg5}
-                  />
-                  <p className="uppercase underline my-3 hover:text-blue-700">
-                    Provide a future for children{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-              <div className="justify-items-center grid">
-                <a href="/">
-                  <img
-                    className="rounded-lg shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 w-96 h-64"
-                    src={MinImg6}
-                  />
-                  <p className="uppercase  underline my-3 hover:text-blue-700">
-                    Support presecuted christians{" "}
-                    <ion-icon name="arrow-forward-outline"></ion-icon>{" "}
-                  </p>
-                </a>
-              </div>
-            </div>
-            <div className="py-8">
-              {" "}
-              <a
-                href="https://paystack.shop/pay/rcmi-donations"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl grid w-72  rounded-md bg-red-700 justify-self-center text-center text-white p-6 h-20 transition-all hover:bg-red-600">
-                Help Today!
-              </a>
-              <img className="py-2 w-52 m-auto" src={CcImg} />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <div className="h-96   bg-[url('/images/project3.jpg')]">
-        <div className="h-96 opacity-65 bg-gradient-to-r from-purple-500 to-pink-500">
-          <div className="z-3 px-8 pt-24 flex flex-col isolate  justify-center items-center h-full m-auto text-center ">
-            <h1 className="font-bold  text-3xl mb-5">Make Your Donation</h1>
-            <p className="mb-4">Help save lives by donating </p>
-            <Button href="/" className={"max-w-32  "}>
-              Back Home
-            </Button>
-          </div>
-        </div>
-      </div> */}
-      <div className="p-7 py-20 grid md:grid-cols-2 max-w-6xl m-auto gap-7">
-        <div className="p-5 hover:-translate-y-2 transition-all">
-          <img src={PityImg2} />
-        </div>
-        <div className="p-5 py-9">
-          <h1 className="font-bold text-4xl">Make a donation</h1>
-          <p className="my-8">
-            To learn more about making charity donations with us visit our {""}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 h-full flex items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
-            <Link
-              to="/contact"
-              className="text-blue-600 hover:text-blue-800 underline"
+            {/* LEFT CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-white"
             >
-              Contact Us
-            </Link>{" "}
 
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+                <span className="text-sm tracking-[0.2em] uppercase">
+                  Refuge & Consolation Ministry International
+                </span>
+              </div>
 
-            page or call{" "}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                Give Hope.
+                <br />
+                Restore Lives.
+              </h1>
+
+              <p className="mt-8 text-lg md:text-xl leading-relaxed text-gray-200 max-w-2xl">
+                Your generosity helps us provide medical outreach, disaster
+                response, humanitarian support, evangelism, and life-changing
+                care to vulnerable communities across Nigeria and beyond.
+              </p>
+
+              {/* CTA BUTTONS */}
+              <div className="flex flex-wrap gap-5 mt-10">
+
+                <a
+                  href="https://paystack.shop/pay/rcmi-donations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    bg-green-500
+                    hover:bg-green-600
+                    text-black
+                    font-semibold
+                    px-8
+                    py-4
+                    rounded-2xl
+                    transition-all
+                    duration-300
+                    shadow-2xl
+                    hover:-translate-y-1
+                  "
+                >
+                  Donate Now
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="
+                    border
+                    border-white/40
+                    hover:bg-white
+                    hover:text-black
+                    px-8
+                    py-4
+                    rounded-2xl
+                    transition-all
+                    duration-300
+                    backdrop-blur-sm
+                  "
+                >
+                  Partner With Us
+                </Link>
+
+              </div>
+
+              <img
+                src={CcImg}
+                alt="Payment methods"
+                className="w-56 mt-8"
+              />
+
+            </motion.div>
+
+            {/* RIGHT CARD */}
+            <motion.div
+              initial={{ opacity: 0, x: 45 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9 }}
+              className="
+                hidden
+                lg:block
+              "
+            >
+
+              <div
+                className="
+                  bg-white/10
+                  backdrop-blur-xl
+                  border
+                  border-white/20
+                  rounded-[32px]
+                  p-8
+                  shadow-2xl
+                "
+              >
+
+                <img
+                  src={PityImg}
+                  alt="RCMI outreach"
+                  className="
+                    w-full
+                    h-[500px]
+                    object-cover
+                    rounded-[24px]
+                  "
+                />
+
+                <div className="pt-7 text-white">
+                  <h2 className="text-2xl font-bold">
+                    Every Donation Creates Impact
+                  </h2>
+
+                  <p className="mt-4 text-gray-200 leading-relaxed">
+                    Through trusted mission partnerships and outreach teams,
+                    your support reaches communities in urgent need with care,
+                    compassion, and the Gospel.
+                  </p>
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* IMPACT SECTION */}
+      <section className="py-24 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto">
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
+
+            <h2 className="text-4xl lg:text-6xl font-black text-gray-900 leading-tight">
+              How Your Giving Makes
+              <span className="text-cyan-700"> A Difference</span>
+            </h2>
+
+            <p className="mt-8 text-lg text-gray-600 leading-loose">
+              Your support empowers RCMI to bring healing, hope, relief,
+              discipleship, and humanitarian assistance to underserved
+              communities through sustainable outreach programs.
+            </p>
+
+          </motion.div>
+
+          {/* MINISTRY GRID */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+
+            {ministryAreas.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                className="
+                  group
+                  bg-white
+                  rounded-[28px]
+                  overflow-hidden
+                  shadow-lg
+                  hover:shadow-2xl
+                  transition-all
+                  duration-500
+                  hover:-translate-y-3
+                "
+              >
+
+                <div className="overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+                      w-full
+                      h-72
+                      object-cover
+                      transition-transform
+                      duration-700
+                      group-hover:scale-110
+                    "
+                  />
+                </div>
+
+                <div className="p-7">
+
+                  <h3 className="text-2xl font-bold text-gray-900 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <div className="mt-6 flex items-center text-cyan-700 font-semibold group-hover:translate-x-2 transition-all duration-300">
+                    Learn More →
+                  </div>
+
+                </div>
+
+              </motion.div>
+            ))}
+
+          </div>
+
+          {/* DONATE CTA */}
+          <div className="text-center mt-20">
 
             <a
-              href="tel:07060508070"
-              className="text-blue-600 hover:text-blue-800 underline"
+              href="https://paystack.shop/pay/rcmi-donations"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                bg-red-700
+                hover:bg-red-600
+                text-white
+                px-10
+                py-5
+                rounded-2xl
+                text-xl
+                font-semibold
+                shadow-xl
+                transition-all
+                duration-300
+                hover:-translate-y-1
+              "
             >
-              07060508070
-            </a>{" "}
+              Help Today
+            </a>
 
-            for inquiry.
-          </p>
-          <h1 className="font-bold text-2xl">Make a donation</h1>
-          <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <img
+              className="py-4 w-52 mx-auto"
+              src={CcImg}
+              alt="Cards"
+            />
 
-            {/* Pass amount as a prop to DonateButton */}
-            <div className="mt-4">
-              <a
-                href="https://paystack.shop/pay/rcmi-donations"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-n-1 text-lg bg-red-600 p-4 rounded-sm text-center hover:bg-red-500 hover:text-black transition-all w-full"
-              >
-                DONATE NOW
-              </a>
-            </div>
-          </form>
+          </div>
+
         </div>
-      </div>
+      </section>
+
+      {/* DONATION INFO SECTION */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+
+            {/* IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, x: -35 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+
+              <img
+                src={PityImg2}
+                alt="Donation"
+                className="
+                  rounded-[32px]
+                  shadow-2xl
+                  object-cover
+                  w-full
+                "
+              />
+
+            </motion.div>
+
+            {/* CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, x: 35 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+
+              <div className="inline-flex px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 font-semibold text-sm mb-6">
+                Trusted Humanitarian Outreach
+              </div>
+
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                Support Our Mission Through Giving
+              </h2>
+
+              <p className="mt-8 text-gray-600 text-lg leading-loose">
+                Your contribution helps provide emergency relief, healthcare,
+                discipleship, education support, and community transformation
+                initiatives across vulnerable regions.
+              </p>
+
+              <div className="mt-10 space-y-5 text-gray-700">
+
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 rounded-full bg-green-500 mt-2"></div>
+                  <p>Secure donations through trusted payment channels</p>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 rounded-full bg-green-500 mt-2"></div>
+                  <p>Transparent and accountable ministry operations</p>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-3 h-3 rounded-full bg-green-500 mt-2"></div>
+                  <p>Direct support for outreach and humanitarian projects</p>
+                </div>
+
+              </div>
+
+              <div className="flex flex-wrap gap-5 mt-12">
+
+                <a
+                  href="https://paystack.shop/pay/rcmi-donations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    bg-cyan-700
+                    hover:bg-cyan-800
+                    text-white
+                    px-8
+                    py-4
+                    rounded-2xl
+                    font-semibold
+                    transition-all
+                    duration-300
+                    shadow-xl
+                  "
+                >
+                  Donate Securely
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="
+                    border
+                    border-gray-300
+                    hover:border-cyan-700
+                    hover:text-cyan-700
+                    px-8
+                    py-4
+                    rounded-2xl
+                    font-semibold
+                    transition-all
+                  "
+                >
+                  Contact Us
+                </Link>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section
+        className="relative bg-cover bg-center py-32"
+        style={{ backgroundImage: `url(${BgMain})` }}
+      >
+
+        <div className="absolute inset-0 bg-black/70"></div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
+
+          <motion.h2
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-4xl lg:text-6xl font-black leading-tight"
+          >
+            Together, We Can Reach More Lives
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mt-8 text-lg text-gray-200 leading-loose max-w-3xl mx-auto"
+          >
+            Join us in bringing hope, compassion, healing, and the message of
+            Christ to communities facing hardship and crisis.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+
+            <a
+              href="https://paystack.shop/pay/rcmi-donations"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-flex
+                bg-green-500
+                hover:bg-green-600
+                text-black
+                px-10
+                py-5
+                rounded-2xl
+                text-lg
+                font-bold
+                transition-all
+                duration-300
+                shadow-2xl
+                hover:-translate-y-1
+              "
+            >
+              Make a Donation
+            </a>
+
+          </motion.div>
+
+        </div>
+      </section>
+
     </div>
   );
 };

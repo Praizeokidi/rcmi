@@ -1,111 +1,166 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import NeedImg1 from "../assets/gospel.jpg";
 import NeedImg2 from "../assets/pexels-jayb-11045177.jpg";
 import NeedImg3 from "../assets/pexels-kublackphotography-10858384.jpg";
-import { Link } from "react-router-dom";
+
+// 🔥 Animated counter hook
+const useCountUp = (target, duration = 1500) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = target / (duration / 16);
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        start = target;
+        clearInterval(counter);
+      }
+      setCount(Math.floor(start));
+    }, 16);
+
+    return () => clearInterval(counter);
+  }, [target, duration]);
+
+  return count;
+};
+
+const NeedCard = ({ title, image, raised, goal, progress, desc }) => {
+  const animatedRaised = useCountUp(raised);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all"
+    >
+      <div className="overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="h-64 w-full object-cover hover:scale-105 transition duration-500"
+        />
+      </div>
+
+      <div className="p-6 text-left">
+        <h3 className="text-lg font-bold tracking-wide mb-3">
+          {title}
+        </h3>
+
+        {/* LIVE COUNTER */}
+        <p className="text-gray-600 font-medium">
+          ${animatedRaised.toLocaleString()} of ${goal.toLocaleString()} raised
+        </p>
+
+        {/* PROGRESS BAR */}
+        <div className="w-full bg-gray-200 h-3 rounded-full mt-3">
+          <div
+            className="bg-gradient-to-r from-orange-500 to-red-500 h-3 rounded-full transition-all duration-700"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        <p className="text-gray-600 mt-4 leading-relaxed text-sm">
+          {desc}
+        </p>
+
+        <Link
+          to="/donations"
+          className="inline-block mt-5 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-xl font-semibold transition"
+        >
+          Donate Now
+        </Link>
+      </div>
+    </motion.div>
+  );
+};
 
 const Needs = () => {
+  const items = [
+    {
+      title: "Send the Gospel to Unreached Tribes",
+      image: NeedImg1,
+      raised: 4000,
+      goal: 12000,
+      progress: 33,
+      desc:
+        "Remote regions of Asia remain unreached. We are actively sending teams to bring hope and spiritual transformation.",
+    },
+    {
+      title: "Share Jesus With Forgotten Children",
+      image: NeedImg2,
+      raised: 900,
+      goal: 12000,
+      progress: 8,
+      desc:
+        "Marginalized children in Southeast Asia lack access to education, care, and hope for a better future.",
+    },
+    {
+      title: "Feed Refugees in Crisis Zones",
+      image: NeedImg3,
+      raised: 0,
+      goal: 12000,
+      progress: 0,
+      desc:
+        "Families displaced by conflict urgently need food, shelter, and humanitarian relief to survive.",
+    },
+  ];
+
   return (
-    <div className="text-center p-9 h-full  bg-gray-100">
-      <div>
-        <div className="text-black">
-          <h1 className="leading-relaxed tracking-wide font-bold p-9 my-10 text-4xl uppercase">
-            Meet Urgent Needs
-          </h1>
-          <div className="grid md:grid-cols-3 gap-9 max-w-6xl m-auto">
-            <div className="my-4 justify-items-center  grid">
-              <h1 className="mb-5 leading-relaxed tracking-widest font-semibold">
-                SEND THE GOSPEL TO THE UNREACHED TRIBES
-              </h1>
-              <img
-                className="h-72  hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2 rounded"
-                src={NeedImg1}
-              />
-              <p className="py-4">$4,000 of $12,000 raised</p>
+    <section className="bg-gray-50 py-20 px-6">
+      {/* HEADER */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center max-w-3xl mx-auto mb-14"
+      >
+        <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+          Meet Urgent Needs
+        </h2>
+        <p className="text-gray-600 mt-5 leading-relaxed">
+          Your support directly funds outreach, rescue missions, and humanitarian
+          aid for vulnerable communities worldwide.
+        </p>
+      </motion.div>
 
-              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                <div className="bg-orange-600 h-4 rounded-full w-1/3"></div>
-              </div>
+      {/* GRID */}
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        {items.map((item, index) => (
+          <NeedCard key={index} {...item} />
+        ))}
+      </motion.div>
 
-              <p className="py-7 tracking-widest font-semibold">
-                In the remote regions of Asia, 12 Unreached People Groups have
-                never heard the Gospel of Jesus Christ. There is no active
-                ministries in the following areas.
-              </p>
-              <div className="py-5">
-                <Link
-                  to="/donations"
-                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
-                  Donate Now
-                </Link>
-              </div>
-            </div>
-            <div className="my-4 justify-items-center grid">
-              <h1 className="mb-5 leading-relaxed tracking-widest font-semibold">
-                SHARE JESUS WITH THE FORGOTTEN CHIDREN
-              </h1>
-              <img
-                className="h-72 hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2 rounded"
-                src={NeedImg2}
-              />
-              <p className="py-4">$900 of $12,000 raised</p>
-              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                <div className="bg-orange-600 h-4 rounded-full w-1/12"></div>
-              </div>
-              <p className="py-7 tracking-widest font-semibold">
-                Across Southeast Asia, the Badjao children live on the margins
-                of society. These forgotten little ones belong to one of the
-                region\&apos;s most overlooked tribes.
-              </p>
-              <div className="py-5">
-                <Link
-                  to="/donations"
-                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
-                  Donate Now
-                </Link>
-              </div>
-            </div>
-            <div className="my-4 justify-items-center grid">
-              <h1 className="mb-5 leading-relaxed tracking-widest font-semibold">
-                HELP FEED REFUGEES AND KIDS AFFECTED BY INSURGENCIES
-              </h1>
-              <img
-                className="h-72 hover:shadow-2xl shadow-lg transition-all hover:-translate-y-2 rounded"
-                src={NeedImg3}
-              />
-              <p className="py-4">$0 of $12,000 raised</p>
-              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
-                {/* <div class="bg-orange-600 h-4 rounded-full w-3"></div> */}
-              </div>
-              <p className=" py-7 tracking-widest font-semibold">
-                Devastating civil war in Myanmar has uprooted hundreds of
-                families, leaving many refugee children in desperate need of
-                food. Their survival is a daily struggle.
-              </p>
-              <div className="py-5">
-                <Link
-                  to="/donations"
-                  className="buttn bg-green-500 rounded text-white p-4  hover:bg-green-600 transition-all hover:text-black">
-                  Donate Now
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="my-14">
-            {" "}
-            <Link
-              to="/urgentneeds"
-              className="buttn hover:bg-orange-700 bg-orange-600 rounded-3xl p-4 text-white"
-            >
-              View More Urgent Needs{" "}
-              <ion-icon
-                className={"bg-orange-400 rounded "}
-                name="chevron-forward-outline"
-              ></ion-icon>
-            </Link>
-          </div>
-        </div>
+      {/* CTA */}
+      <div className="text-center mt-16">
+        <Link
+          to="/urgentneeds"
+          className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-7 py-4 rounded-full font-semibold transition shadow-lg"
+        >
+          View More Urgent Needs
+        </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

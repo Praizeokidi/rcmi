@@ -1,331 +1,442 @@
-import Button from "../components/Button";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  Globe,
+  HeartHandshake,
+  Users,
+  ShieldCheck,
+  Stethoscope,
+  Church,
+} from "lucide-react";
+
 import Image1 from "../assets/abt1.jpg";
 import Image2 from "../assets/abt2.jpg";
 import Image3 from "../assets/abt3.jpg";
+import BgMain from "../images/main-bcg.jpeg";
+
 const AboutPage = () => {
+  const goals = [
+    {
+      icon: <HeartHandshake size={28} />,
+      title: "Humanitarian Outreach",
+      text: "Providing relief, healthcare support, and compassionate care to vulnerable communities.",
+    },
+    {
+      icon: <Church size={28} />,
+      title: "Evangelism & Missions",
+      text: "Reaching unreached people groups with the Gospel and message of hope through Christ.",
+    },
+    {
+      icon: <Stethoscope size={28} />,
+      title: "Medical Missions",
+      text: "Delivering eye care, treatment, and healthcare access through strategic outreach programs.",
+    },
+    {
+      icon: <Globe size={28} />,
+      title: "Global Impact",
+      text: "Expanding our reach across Nigeria, Africa, and beyond through sustainable ministry efforts.",
+    },
+  ];
+
+  const leadership = [
+    {
+      name: "Dr Chaplain Juliana Nathaniel",
+      role: "Global Director",
+    },
+    {
+      name: "Reverend Lei Abrahams Ndu",
+      role: "National Coordinator",
+    },
+    {
+      name: "Chaplain Asuquo Udo Edem",
+      role: "National Technical Advisor",
+    },
+    {
+      name: "Pastor Mike O. Amos",
+      role: "Director of Missions",
+    },
+    {
+      name: "Evangelist Francisca Nonye Okah",
+      role: "Director STORM",
+    },
+    {
+      name: "Pastor Mrs Claris Eze",
+      role: "Director of Administration",
+    },
+  ];
+
   return (
-    <div>
-      <div>
-        <div className="h-96   ">
-          <div className="h-96 opacity-65 bg-gradient-to-r from-purple-500 to-pink-500">
-            <div className="z-3 px-8 pt-24 flex flex-col isolate justify-center items-center h-full m-auto text-center ">
-              <h1 className="font-bold text-3xl mb-5">ABOUT RCMI</h1>
-              <p className="mb-4">
-                Reefuge and Consolation Ministry International
-              </p>
-              <Button href="/" className={"max-w-32  "}>
-                Back Home
-              </Button>
+    <div className="bg-white overflow-x-hidden mt-17">
+
+      {/* HERO SECTION */}
+      <div
+        className="relative min-h-[80vh] bg-center bg-cover bg-no-repeat flex items-center"
+        style={{ backgroundImage: `url(${BgMain})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+
+            <div className="mb-6 inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white">
+              <ShieldCheck size={18} />
+              <span className="text-sm tracking-wide uppercase">
+                Christian Humanitarian Organization
+              </span>
             </div>
-          </div>
-        </div>
-        <div className="p-15  grid md:grid-cols-2 gap-3">
-          <div>
-            <div className="py-9">
-              <img className="pb-4 shadow-2xl" src={Image1} />
-              <img className="pb-4 shadow-2xl" src={Image2} />
-              <img className="pb-4 shadow-2xl" src={Image3} />
-            </div>
-          </div>
-          <div className="p-4">
-            <div className="mb-6">
-              <h2 className="text-2xl font-semibold underline mb-4 text-orange-600">
-                RCMI Goals
-              </h2>
-              <p>
-                The goals of RCMI are to reduce morbidity and mortality among
-                communities targeted at the vulnerable (persons with
-                disabilities, the elderly and poor) within communities in
-                Nigeria, Africa and beyond.We aspire to reach the lost and
-                unreached people groups with the message of love, to make the
-                world a better place to live.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold underline text-orange-600 mb-4">
-                RCMI Objectives
-              </h2>
-              <ul className=" list-decimal">
-                <li className="mb-3">
-                  Reach the unreached people groups in Nigeria, Africa, and
-                  beyond with the message of salvation through Jesus Christ to
-                  save them from sin and condemnation.
-                </li>
-                <li className="mb-3">
-                  Strengthen capacity of missionaries and their spouses on soul
-                  winning discipleship and modalities for breaking new grounds
-                  for furtherance of the gospel of Jesus Christ.
-                </li>
-                <li className="mb-3">
-                  Increase access of vulnerable groups (missionaries, new
-                  converts in difficult circumstances and victims of disaster)
-                  within the communities to health care and humanitarian
-                  services through medical outreach and emergency response while
-                  introducing them to Christ.
-                </li>
-                <li className="mb-3">
-                  4. Share the love of Christ by improving access of the rural
-                  communities to nutrition, clean drinking water, sanitation
-                  facilities and hygiene practices to curb malnutrition,
-                  waterborne and sanitation related diseases.
-                </li>
-                <li className="mb-3">
-                  Strengthen capacity of the vulnerable groups, (missionaries,
-                  their spouses, and victims of disaster) to empower them to
-                  attain their educational pursuits including entrepreneurship,
-                  to enable them to navigate through life with ease, live good
-                  productive lives, and contribute meaningfully towards
-                  improving the lots of humanity.
-                </li>
-                <li className="mb-3">
-                  Strengthen the health system to facilitate access to quality
-                  health services (eye care, treatment of minor ailments and
-                  referrals) in Nigeria, other African countries and beyond.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="p-11 lg:p-24 max-w-5xl">
-          <div className="mb-10">
-            <div>
-              <h1 className="text-2xl text-orange-600 font-semibold mb-6">
-                Our Reach
-              </h1>
-            </div>
-            <div>
-              <p>
-                We initiated activities in Nigeria and will reach other parts of
-                Africa and the globe as the Almighty God grants us speed. We
-                will extend our activities to other African countries, Europe,
-                Middle East, and Latin America. <br></br>Being rural focused, we
-                have offices in Abuja FCT, Achi Enugu State, and Bauchi State
-                Nigeria. There is an office in Anambra State which is presently
-                redundant.
-              </p>
-            </div>
-          </div>
-          <div>
-            <div>
-              <h1 className="text-2xl font-semibold mb-6 text-orange-600">
-                Target Groups:
-              </h1>
-            </div>
-            <div>
-              <p>
-                Our target audience are:
-                <ul className="list-disc">
-                  <li>Unreached people group.</li>
-                  <li>Missionaries </li>
-                  <li>New converts</li>
-                  <li>
-                    Displaced individuals including the persons living with
-                    disabilities
-                  </li>
-                  <li>Indigent persons</li>
-                  <li>Women</li>
-                  <li>Children</li>
-                  <li>Community Gate Keepers</li>
-                  <li>Government Officials</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="p-9 max-w-9xl m-auto  lg:p-24">
-          <div>
-            <h1 className="text-3xl font-semibold mb-6">MANAGEMENT OF RCMI</h1>
-            <h1 className="text-xl font-medium mb-6">
-              Board of Trustees of RCMI:
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
+              About RCMI
             </h1>
-          </div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 p-1">
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Professor Amos Paul Bassi :
-                </span>
-                <br></br>
-                is a Professor of Public Health Medicine and the immediate past
-                Provost College of Medicine and Health Sciences, Bingham
-                University, Nigeria. He is a member of the strategic advisory
-                Board of the West African Institute of Public Health and a
-                global advocate for Primary Health Care. He has a multi country
-                experience which include implementation of major RMNCAH
-                interventions in Africa and Asia for close to 30 years. His area
-                of expertise was in Health System strengthening, Malaria, water,
-                Sanitation and Hygiene related programs. Amongst the
-                international Organizations he worked for are WHO, UNICEF,
-                USAID, DFID, European Union and World Bank as well as
-                non-for-profit organisation like John Snow Incorporated. He is
-                an active member of the Nigerian Medical Association (NMA) and
-                recognised for his global and local networks.{" "}
-              </p>
-            </div>
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Dr Juliana Nathaniel :
-                </span>
-                <br></br>
-                is a Public Health Specialist with a Ph.D. in Public Health. She
-                has more than 30 years’ experience in Project Development and
-                Management. Her core Skills include strategic planning, project
-                cycle management, finance management, organizational capacity
-                development, health systems strengthening (leadership and
-                governance, health financing, human resource for health
-                management and service delivery). She is a team building expert
-                and has successfully led health projects at the State and
-                National levels in Nigeria. She was the Project Director of the
-                most successful eye health program ever implemented in Nigeria
-                (the defunct Seeing is Believing Program in Nigeria) led by
-                Christoffel BlindenMission (CBM) in collaboration with the
-                International Agency for Prevention of Blindness (AIPB),
-                supported by the Standard Chartered Bank.
-              </p>
-            </div>
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Dr Ferdinand Nweke :
-                </span>
-                <br></br>
-                is a Medical Doctor with MBBS qualification. He has successfully
-                managed public and private sector service delivery programs as a
-                Medical Director in-charge. He is the Chair of RCMI Board of
-                Trustees. He is an acclaimed international Evangelist, and the
-                Global Coordinator of Eternity Ministries International based in
-                Abuja, FCT Nigeria.
-              </p>
-            </div>
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Mr Kalajaiye Adelaja:
-                </span>
-                <br></br>
-                is a seasoned educationist and worked as a lecturer at Federal
-                polytechnic Bauchi. He has a B.Sc. Business Administration and
-                MBA Marketing. He retired as a Senior lecturer after 23 years of
-                service with the Federal Polytechnic Bauchi. His Specialization
-                is Human Resource Management. Currently, a missionary in Oriade
-                LGA, Osun State. He is the Founder of the Polished Arrow
-                Ministries based in Ikeji Ile, Osun State.
-              </p>
-            </div>
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Barrister Cyril Irorakpo:
-                </span>
-                <br></br>
-                is a successful legal practitioner and the RCMI Legal Advisor.
-                He has a chamber and manages a successful and thriving legal
-                firm in Bauchi State.
-              </p>
-            </div>
-            <div className="mb-5 p-4">
-              <p>
-                <span className="text-orange-600 font-extrabold text-xl">
-                  Mrs. Francisca Okah:
-                </span>
-                <br></br>
-                She is a seasoned educationist with a National Certificate of
-                Education (NCE) obtained from the prestigious Ahmadu Bello
-                University, Zaria. She worked as a classroom teacher and later
-                worked with 2 USAID projects in Bauchi State. She retired after
-                putting in 10 years of useful service as the Project Admin and
-                Finance Officer of the defunct Vision Project and the Community
-                Participation for Action in the Social Sector (COMPASS) project
-                funded projects in Bauchi State.
-              </p>
-            </div>
-          </div>
-          <div>
-            <h1 className="text-xl font-bold mb-4 mt-8 text-orange-600">
-              Directors of RCMI:
-            </h1>
-            <p>
-              The Global Director coordinates the affairs of RCMI at the
-              international level. We have a National Technical Advisors and a
-              National Coordinator that oversees the affairs of RCMI at the
-              national level. There are Eight Directors in charge of the
-              different departments of the ministry.
+
+            <p className="mt-7 text-lg sm:text-xl leading-relaxed text-gray-200 max-w-2xl">
+              Refuge and Consolation Ministry International is committed to
+              restoring hope, transforming lives, advancing humanitarian care,
+              and spreading the Gospel through compassionate outreach and
+              sustainable impact initiatives.
             </p>
-          </div>
-          <div>
-            <h1 className="text-orange-600 text-xl font-bold mb-4 mt-9">
-              The Directors are as follows::
-            </h1>
-            <p>
-              <ul className="list-decimal p-4">
-                <li> Dr Chaplain Juliana Nathaniel - Global Director</li>
-                <li> Reverend Lei Abrahams Ndu – National Coordinator</li>
-                <li>Chaplain Asuquo Udo Edem – National Technical Advisor</li>
-                <li> Pastor Mike O. Amos – Director of Missions</li>
-                <li> Evangelist Francisca Nonye Okah- Director STORM.</li>
-                <li> Pastor Mrs Claris Eze - Director of Administration</li>
-                <li> Olabosun Anjorin -Director Knowledge Management</li>
-                <li> Minister Istifanus Nathan - Director Music</li>
-                <li> Director Medical Outreach - Dr Chinedu Noble</li>
-                <li> Director of Logistics and Supplies - Vacant</li>
-                <li> Director of Finance - Vacant</li>
-              </ul>
-            </p>
-          </div>
-          <div>
-            <h1 className="text-xl text-orange-600 font-bold mb-4 mt-8">
-              Deputy Directors:
-            </h1>
-            <p>
-              RCMI has eight Deputy Directors as follows: Two of the deputy
-              directors are based at the head office and the remaining are at
-              the six geopolitical zones of Nigeria.
-            </p>
-          </div>
-          <div>
-            <h1 className=" text-xl font-bold mb-4 mt-9 text-orange-600">
-              National Level:
-            </h1>
-            <p>
-              <ul className="list-decimal p-4">
-                <li>Sunday Dogara - Deputy Director of Medical Outreach.</li>
-                <li> Deputy Director of Missions.</li>
-              </ul>
-            </p>
-          </div>
-          <div>
-            <h1 className=" text-xl font-bold mb-4 mt-9 text-orange-600">
-              Others are at the geopolitical zones:
-            </h1>
-            <p>
-              <ul className="list-decimal p-4">
-                <li> Pastor Noah Halan- Deputy Director Northeast zone.</li>
-                <li>Mr Zacharia D. Yiga-Deputy Director Northcentral zone..</li>
-                <li> Deputy Director Northwest zone -Vacant</li>
-                <li> Deputy Director Southeast zone- Vacant</li>
-                <li> Deputy Director Southsouth zone- Vacant</li>
-                <li> Deputy Director Southwest- Vacant</li>
-              </ul>
-            </p>
-          </div>
-          <div className="mb-14">
-            <h1 className=" text-3xl font-extrabold mb-9 mt-15 text-orange-600">
-              Location of RCMI
-            </h1>
-            <p>
-              By October 2024, RCMI will relocate its operational base to a
-              rural community called Achi, Enugu State, Nigeria. In the interim,
-              the ministry is operating from its office in Abuja, Federal
-              Capital Territory, Nigeria. The RCMI state office in Bauchi is
-              functional and situated at Zafin-Zurfi Settlement, Adjacent the
-              Federal Polytechnic Fence. Along Dass Road. We plan to reactivate
-              the office in Anambra State by June 2025, as we continue to expand
-              our geographic coverage.
-            </p>
-          </div>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                to="/donations"
+                className="bg-green-500 hover:bg-green-600 transition px-8 py-4 rounded-xl font-semibold text-white shadow-xl"
+              >
+                Support Our Mission
+              </Link>
+
+              <Link
+                to="/contact"
+                className="border border-white/30 bg-white/10 backdrop-blur-md hover:bg-white/20 transition px-8 py-4 rounded-xl font-semibold text-white"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+          </motion.div>
+
         </div>
       </div>
+
+      {/* INTRO SECTION */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* IMAGES */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 gap-5"
+          >
+
+            <img
+              src={Image1}
+              alt="RCMI outreach"
+              className="rounded-3xl shadow-2xl object-cover h-full"
+            />
+
+            <div className="space-y-5">
+              <img
+                src={Image2}
+                alt="RCMI mission"
+                className="rounded-3xl shadow-2xl object-cover"
+              />
+
+              <img
+                src={Image3}
+                alt="RCMI humanitarian work"
+                className="rounded-3xl shadow-2xl object-cover"
+              />
+            </div>
+
+          </motion.div>
+
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+
+            <div>
+              <p className="text-cyan-700 font-semibold uppercase tracking-[0.2em]">
+                Our Mission
+              </p>
+
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 leading-tight">
+                Restoring Hope Through Faith, Compassion & Service
+              </h2>
+            </div>
+
+            <p className="text-gray-600 leading-loose text-lg">
+              RCMI exists to reduce suffering among vulnerable populations,
+              provide humanitarian support, strengthen healthcare access, and
+              spread the message of salvation through Jesus Christ across
+              communities in Nigeria, Africa, and beyond.
+            </p>
+
+            <p className="text-gray-600 leading-loose text-lg">
+              Through medical missions, evangelism, emergency response,
+              discipleship, and community development initiatives, we seek to
+              bring practical help and spiritual transformation to individuals
+              and families in need.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-5 pt-4">
+
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <h3 className="text-3xl font-bold text-cyan-700">15+</h3>
+                <p className="text-gray-600 mt-2">
+                  Years of humanitarian and ministry impact
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <h3 className="text-3xl font-bold text-cyan-700">Global</h3>
+                <p className="text-gray-600 mt-2">
+                  Outreach vision across Africa and beyond
+                </p>
+              </div>
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
+      </div>
+
+      {/* GOALS SECTION */}
+      <div className="bg-gray-50 py-24">
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+          <div className="text-center max-w-3xl mx-auto">
+
+            <p className="text-cyan-700 font-semibold uppercase tracking-[0.2em]">
+              What We Do
+            </p>
+
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
+              Our Core Areas of Impact
+            </h2>
+
+            <p className="mt-6 text-gray-600 leading-loose text-lg">
+              We combine humanitarian action, medical outreach, discipleship,
+              and sustainable development initiatives to improve lives and
+              strengthen communities.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mt-16">
+
+            {goals.map((goal, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              >
+
+                <div className="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
+                  {goal.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mt-6">
+                  {goal.title}
+                </h3>
+
+                <p className="text-gray-600 leading-loose mt-4">
+                  {goal.text}
+                </p>
+
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* OBJECTIVES */}
+      <div className="py-24 bg-white">
+
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+
+          <div className="text-center mb-16">
+
+            <p className="text-cyan-700 font-semibold uppercase tracking-[0.2em]">
+              Strategic Objectives
+            </p>
+
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
+              Building Sustainable Community Transformation
+            </h2>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {[
+              "Reach unreached communities with the Gospel of Jesus Christ.",
+              "Support missionaries and strengthen discipleship initiatives.",
+              "Expand access to healthcare and humanitarian support.",
+              "Improve nutrition, clean water, sanitation, and hygiene access.",
+              "Empower vulnerable groups through education and entrepreneurship.",
+              "Strengthen healthcare systems and outreach capacity.",
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                className="flex items-start gap-5 bg-gray-50 rounded-2xl p-6 border border-gray-100"
+              >
+
+                <div className="min-w-12 h-12 rounded-full bg-cyan-700 text-white flex items-center justify-center font-bold">
+                  {index + 1}
+                </div>
+
+                <p className="text-gray-700 leading-loose">
+                  {item}
+                </p>
+
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* LEADERSHIP */}
+      <div className="bg-gradient-to-r from-cyan-800 to-blue-900 py-24 text-white">
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+          <div className="text-center max-w-3xl mx-auto">
+
+            <p className="uppercase tracking-[0.2em] text-cyan-200 font-semibold">
+              Leadership
+            </p>
+
+            <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+              Experienced & Mission-Driven Leadership
+            </h2>
+
+            <p className="mt-6 text-gray-200 leading-loose text-lg">
+              RCMI is guided by experienced ministry leaders, healthcare
+              professionals, and humanitarian advocates committed to advancing
+              transformational impact.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-16">
+
+            {leadership.map((leader, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                className="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/15 transition"
+              >
+
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <Users size={28} />
+                </div>
+
+                <h3 className="text-2xl font-bold">
+                  {leader.name}
+                </h3>
+
+                <p className="text-cyan-200 mt-3">
+                  {leader.role}
+                </p>
+
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* FINAL CTA */}
+      <div className="py-24 bg-white">
+
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-cyan-700 to-blue-900 rounded-[2rem] p-10 lg:p-16 text-white shadow-2xl"
+          >
+
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+              Partner With Us To Transform Lives
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-200 leading-loose max-w-3xl mx-auto">
+              Your support enables us to continue humanitarian outreach,
+              medical missions, evangelism, and community restoration programs
+              that impact thousands of lives.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-5 mt-10">
+
+              <Link
+                to="/donations"
+                className="bg-green-500 hover:bg-green-600 transition px-8 py-4 rounded-xl font-semibold shadow-lg"
+              >
+                Donate Now
+              </Link>
+
+              <Link
+                to="/contact"
+                className="border border-white/30 hover:bg-white/10 transition px-8 py-4 rounded-xl font-semibold"
+              >
+                Become a Partner
+              </Link>
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };

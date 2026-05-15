@@ -60,7 +60,7 @@ function Navbar() {
 
               {/* TEXT LINK */}
               <Link
-                to="/vision-mission"
+                to="/about"
                 className="nav-links text-base"
                 onClick={closeMobileMenu}
               >
@@ -106,6 +106,15 @@ function Navbar() {
               onClick={closeMobileMenu}
             >
               Ministry Reports
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/gallery"
+              className="nav-links text-base"
+              onClick={closeMobileMenu}
+            >
+              Gallery
             </Link>
           </li>
           <li className="nav-item">

@@ -1,177 +1,229 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DonImg from "../assets/founder.jpeg";
-//import DonImg2 from "../images/pexels-victor-moragriega-1390556186-29421908.jpg";
 import BgMain from "../images/main-bcg.jpeg";
 import BgGirls from "../images/pexels-jibarofoto-2014773.jpg";
-//import Newsletter from "../components/Newsletter";
-//import BgImage from "../images/pexels-jibarofoto-2014773.jpg";
-
-
-
-
 
 const Vision = () => {
+  const [active, setActive] = useState("vision");
+
+  // ScrollSpy (detect active section)
+  useEffect(() => {
+    const sections = ["vision", "mission", "history", "leadership"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const navItem = (id, label) => (
+    <a
+      href={`#${id}`}
+      className={`px-4 py-2 rounded-full transition font-medium whitespace-nowrap ${active === id
+          ? "bg-blue-900 text-white shadow-md"
+          : "text-gray-700 hover:bg-gray-100"
+        }`}
+    >
+      {label}
+    </a>
+  );
+
   return (
-    <div className="bg-gray-100  mt-28">
-      <div className="p-6 py-10  m-auto max-w-6xl">
-        <h1 className="hidden p-6 py-10 lg:block text-4xl font-bold">
-          Why Does RCMI exist ?
+    <div className="bg-[#f6f7fb] mt-20 text-gray-900 scroll-smooth">
+
+      {/* TOP HEADER */}
+      <div className="max-w-6xl mx-auto px-6 pt-16 pb-6">
+        <h1 className="text-3xl md:text-5xl font-black">
+          Why RCMI Exists
         </h1>
-        <div className="grid lg:grid-cols-2">
-          <div className="p-2 lg:p-14 lg:space-y-12 space-y-7 lg:bg-blue-800 lg:text-white ">
-            <h1 className="text-4xl font-extrabold">Our Vision</h1>
-            <p className="text-gray-700 tracking-wider lg:tracking-widest lg:leading-loose lg:text-white lg:text-xl text-lg">
-              At RCMI, we envisage a world free of blindness and anguish, where
-              multitudes are transformed and saved with the host of heaven in
-              jubilation as the saints’ march into heaven in their numbers.{" "}
-            </p>
-            <div className="hidden lg:block">
-              <Link
-                to="/donations"
-                className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
-              >
-                DONATE NOW
-              </Link>
-            </div>
-          </div>
-          <div className="hidden lg:block">
-            <img src={DonImg} alt="Founder" className="h-full" />
-          </div>
+        <p className="mt-4 text-gray-600 max-w-3xl leading-relaxed">
+          A mission-driven organization restoring hope, healing, and transformation across nations.
+        </p>
+      </div>
+
+      {/* STICKY NAVIGATION */}
+      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex gap-3 overflow-x-auto">
+          {navItem("vision", "Vision")}
+          {navItem("mission", "Mission")}
+          {navItem("history", "History")}
+          {navItem("leadership", "Leadership")}
         </div>
       </div>
 
-      {/* Mission Section */}
-      <div className="bg-cover bg-no-repeat bg-fixed relative overflow-x-hidden"
-        style={{ backgroundImage: `url(${BgMain})` }}>
-        <div className="p-10  py-10 backdrop-brightness-50 space-y-5 text-white ">
-          <div className="max-w-5xl m-auto lg:p-10 space-y-4 lg:space-y-8">
-            <h1 className="text-3xl lg:text-5xl font-bold">
-              Our Mission Statement
-            </h1>
-            <p className=" tracking-wide lg:tracking-wider lg:leading-relaxed lg:text-xl text-lg">
-              Our mission is to restore sight, move people from darkness to
-              light, take the gospel to unreached people group, and provide
-              solace to people in difficult circumstances. We provide support by
-              meeting their spiritual/psychological, physiological, and social
-              needs to ameliorate sufferings and negative impacts of neglect,
-              using medical outreach as an in road into the communities.
-            </p>
+      {/* VISION */}
+      <div className="max-w-6xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-10 items-center">
+
+        <div
+          id="vision"
+          className="bg-blue-900 text-white rounded-2xl p-10 shadow-xl"
+        >
+          <h2 className="text-3xl font-bold">Our Vision</h2>
+
+          <p className="mt-6 text-white/80 leading-relaxed text-lg">
+            At RCMI, we envisage a world free of blindness and anguish, where
+            multitudes are transformed and saved with the host of heaven in jubilation.
+          </p>
+
+          <div className="mt-8">
+            <Link
+              to="/donations"
+              className="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition"
+            >
+              Donate Now
+            </Link>
           </div>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden shadow-xl">
+          <img src={DonImg} alt="Founder" className="w-full h-full object-cover" />
         </div>
       </div>
 
+      {/* MISSION */}
+      <div
+        id="mission"
+        className="relative py-24 px-6 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BgMain})` }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
 
-      {/* History Section */}
-      <div className="p-6 text-center py-20">
-        <h1 className="text-2xl py-6 font-bold lg:text-4xl">
+        <div className="relative max-w-4xl mx-auto text-center text-white">
+          <h2 className="text-3xl md:text-5xl font-black">
+            Our Mission Statement
+          </h2>
+
+          <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
+            Our mission is to restore sight, move people from darkness to light,
+            take the gospel to unreached people groups, and provide humanitarian care globally.
+          </p>
+        </div>
+      </div>
+
+      {/* HISTORY */}
+      <div
+        id="history"
+        className="max-w-6xl mx-auto px-6 py-20"
+      >
+        <h2 className="text-3xl md:text-4xl font-black text-center mb-10">
           The History of RCMI
-        </h1>
-        <div className="p-6 md:p-10 max-w-6xl m-auto bg-cyan-100 grid md:grid-cols-2  gap-7">
-          <div className="space-y-5">
-            <img src={DonImg} />
-            <h1 className="text-lg font-bold">
-              Dr Chaplain Juliana Nathaniel, Ph.D. <br></br> RCMI Global
-              Coordinator
-            </h1>
-          </div>
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-lg p-8">
+
           <div>
-            <p className="leading-loose text-lg">
-              Refuge and Consolation Ministry International (RCMI), is a
-              non-profit making, non-governmental, mission support and emergency
-              response Christian ministry established in 2009.
-              <br></br> The Bible in Mark 16:15 & Matthew 28:19-20, says, “And
-              he said unto them, go ye into all the world, and preach the gospel
-              to every creature. [16]He that believeth and is baptized shall be
-              saved; but he that believeth not shall be damned (NKJV).
-              <br></br>In response to the great commission, we embark on
-              integral missions, medical missions and conduct crusades and
-              outreaches within the communities to reconcile men to God, restore
-              sight to individuals suffering from spiritual blindness, and
-              provide treatment to those afflicted with sickness diseases and
-              visual impairment. We equally support individuals affected by
-              disaster to alleviate their suffering.
+            <img src={DonImg} className="rounded-xl shadow-md" />
+            <p className="mt-4 font-semibold">
+              Dr Chaplain Juliana Nathaniel <br />
+              <span className="text-gray-500 font-normal">
+                Global Coordinator
+              </span>
             </p>
           </div>
-        </div>
-      </div>
 
-      {/* Leadership Section */}
-      <div className="md:py-10 py-5 bg-cyan-600 ">
-        <div className="p-6">
-          <h1 className="text-2xl font-bold text-center">Our Leadership</h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 max-w-6xl m-auto ">
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Dr Chaplain Juliana Nathaniel</h1>
-              <p className="text-gray-700"> Global Director</p>
-            </div>
-
-            {/* Add other leaders similarly */}
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Reverend Lei Abrahams Ndu </h1>
-              <p className="text-gray-700"> National Coordinator</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Chaplain Asuquo Udo Edem </h1>
-              <p className="text-gray-700">National Technical Advisor</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl">Pastor Mike O. Amos</h1>
-              <p className="text-gray-700"> Director of Missions</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Evangelist Francisca Nonye Okah</h1>
-              <p className="text-gray-700"> Director STORM.</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl">Pastor Mrs Claris Eze </h1>
-              <p className="text-gray-700"> Director of Administration</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Olabosun Anjorin </h1>
-              <p className="text-gray-700"> Director Knowledge Management</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Minister Istifanus Nathan </h1>
-              <p className="text-gray-700"> Director Music</p>
-            </div>
-            <div className="border-2 border-white p-6 space-y-6">
-              <h1 className="text-xl"> Dr Chinedu Noble </h1>
-              <p className="text-gray-700"> Director Medical Outreach</p>
-            </div>
+          <div className="text-gray-700 leading-relaxed text-lg space-y-4">
+            <p>
+              RCMI is a non-profit Christian mission organization established in 2009.
+            </p>
+            <p>
+              We respond to the Great Commission through evangelism, medical outreach,
+              and humanitarian relief.
+            </p>
+            <p>
+              Our mission is to bring healing, hope, and restoration to vulnerable communities.
+            </p>
           </div>
+
         </div>
       </div>
-      <div>
-        <div className="sm:h-screen w-full h-[69rem] md:h-screen lg:h-screen xl:h-screen bg-center bg-cover bg-no-repeat relative overflow-x-hidden"
-          style={{ backgroundImage: `url(${BgGirls})` }}>
-          <div className=" h-full w-full backdrop-brightness-50 ">
-            <div>
-              <div className="p-11 sm:px-15 sm:h-2/3 sm:pt-44 flex justify-items-center justify-between flex-col pt-32 h-2/3 absolute md:ml-10 lg:ml-28  antialiased max-w-3xl text-white ">
-                <h1 className="text-4xl py-4  leading-relaxed tracking-wide font-bold">
-                  Release, Rescue, and Restore Girls Trapped in Trafficking
-                </h1>
-                <p className="font-medium text-lg leading-relaxed tracking-wide mb-9">
-                  Right now, in the red-light districts of Myanmar, young girls
-                  are trapped in a nightmare, trafficked into sex work and
-                  living in constant fear. Our brave outreach teams venture into
-                  dangerous areas to release these girls, providing them with
-                  trauma counseling, job training, and a safe place to heal.
-                  While thousands of lives have already been transformed, tens
-                  of thousands more are still waiting. On average, it costs $160
-                  to rescue one girl. Will you make a compassionate donation
-                  today to release more girls from trafficking?
-                </p>
-                <Link
-                  to="/donations"
-                  className="buttn text-center max-w-64 bg-green-500 rounded hover:bg-green-600 hover:text-black transition p-4"
-                >
-                  DONATE NOW
-                </Link>
+
+      {/* LEADERSHIP */}
+      <div
+        id="leadership"
+        className="bg-slate-900 text-white py-20"
+      >
+        <div className="max-w-6xl mx-auto px-6">
+
+          <h2 className="text-3xl md:text-4xl font-black text-center mb-12">
+            Our Leadership
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {[
+              ["Dr Chaplain Juliana Nathaniel", "Global Director"],
+              ["Reverend Lei Abrahams Ndu", "National Coordinator"],
+              ["Chaplain Asuquo Udo Edem", "Technical Advisor"],
+              ["Pastor Mike O. Amos", "Director of Missions"],
+              ["Evangelist Francisca Okah", "Director STORM"],
+              ["Pastor Mrs Claris Eze", "Administration"],
+              ["Olabosun Anjorin", "Knowledge Management"],
+              ["Minister Istifanus Nathan", "Music Director"],
+              ["Dr Chinedu Noble", "Medical Outreach"]
+            ].map(([name, role], i) => (
+              <div
+                key={i}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition"
+              >
+                <h3 className="font-semibold text-lg">{name}</h3>
+                <p className="text-white/60 mt-2">{role}</p>
               </div>
-            </div>
+            ))}
+
           </div>
+
         </div>
       </div>
+
+      {/* FINAL HERO */}
+      <div
+        className="relative min-h-[80vh] bg-cover bg-center"
+        style={{ backgroundImage: `url(${BgGirls})` }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="relative max-w-4xl mx-auto px-6 py-24 text-white">
+
+          <h2 className="text-4xl md:text-5xl font-black">
+            Release, Rescue, and Restore Lives
+          </h2>
+
+          <p className="mt-6 text-white/80 text-lg leading-relaxed">
+            We rescue vulnerable individuals and restore dignity through care,
+            education, and rehabilitation programs.
+          </p>
+
+          <div className="mt-10">
+            <Link
+              to="/donations"
+              className="inline-block bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-xl transition"
+            >
+              Donate Now
+            </Link>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };
