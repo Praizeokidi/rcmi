@@ -16,13 +16,19 @@ const ContactPage = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // NEW: submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // clear old messages
+    setSuccessMessage("");
+    setErrorMessage("");
+
     if (!name || !email || !message) {
-      alert("Please fill all fields");
+      setErrorMessage("Please fill all fields");
       return;
     }
 
@@ -30,7 +36,7 @@ const ContactPage = () => {
       setLoading(true);
 
       await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/contact`, // CHANGED: ensure correct env name
+        `${import.meta.env.VITE_BACKEND_URL}/contact`,
         {
           name,
           email,
@@ -38,23 +44,29 @@ const ContactPage = () => {
         }
       );
 
-      alert("Thanks for contacting us. An email will be sent to you shortly");
+      // ✅ PROFESSIONAL SUCCESS MESSAGE
+      setSuccessMessage(
+        "Successfully submitted. You will receive an email shortly."
+      );
 
+      // clear form
       setName("");
       setEmail("");
       setMessage("");
 
     } catch (error) {
+
       console.error(error);
-      alert("Failed to send message");
+
+      setErrorMessage(
+        "Failed to send message. Please try again."
+      );
 
     } finally {
       setLoading(false);
     }
-
-    // ❌ REMOVED: console.log(import.meta.env.VITE_API_URL);
-    // reason: unnecessary + can confuse debugging + may be undefined
   };
+
 
   return (
     <div>
@@ -104,6 +116,49 @@ const ContactPage = () => {
               <div className="bg-white rounded-xl shadow-lg p-4 sm:p-8 text-gray-600">
 
                 {/* NEW: form submit handler */}
+
+                {/* SUCCESS MESSAGE */}
+                {successMessage && (
+                  <div
+                    className="
+      mb-6
+      rounded-xl
+      border
+      border-green-200
+      bg-green-50
+      px-4
+      py-4
+      text-sm
+      font-medium
+      text-green-700
+      shadow-sm
+    "
+                  >
+                    ✅ {successMessage}
+                  </div>
+                )}
+
+                {/* ERROR MESSAGE */}
+                {errorMessage && (
+                  <div
+                    className="
+      mb-6
+      rounded-xl
+      border
+      border-red-200
+      bg-red-50
+      px-4
+      py-4
+      text-sm
+      font-medium
+      text-red-700
+      shadow-sm
+    "
+                  >
+                    ⚠️ {errorMessage}
+                  </div>
+                )}
+
 
                 <form
                   onSubmit={handleSubmit}

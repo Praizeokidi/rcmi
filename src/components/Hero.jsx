@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="max-w-4xl px-6 sm:px-10 lg:ml-24 text-white">
 
           {/* BADGE (optional but premium feel) */}
-          <div className=" mt-10 mb-6">
+          <div className=" mt-28 mb-6">
             <span className="bg-white/10 border border-white/20 backdrop-blur-md px-5 py-2 rounded-full text-xs tracking-widest uppercase">
               RCMI Rescue Mission
             </span>

@@ -84,7 +84,7 @@ const AboutPage = () => {
             className="max-w-3xl"
           >
 
-            <div className="mb-6 inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white">
+            <div className="mb-6 mt-28 inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white">
               <ShieldCheck size={18} />
               <span className="text-sm tracking-wide uppercase">
                 Christian Humanitarian Organization
