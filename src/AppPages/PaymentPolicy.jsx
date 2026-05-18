@@ -31,7 +31,7 @@ const PaymentPolicy = () => {
                     className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
                 >
 
-                    <div className="mt-20 mb-6">
+                    <div className="mt-28 mb-6">
                         <span className="bg-white/10 border border-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm tracking-widest uppercase">
                             RCMI Global Policy
                         </span>
@@ -47,21 +47,23 @@ const PaymentPolicy = () => {
                         and Christian ministry initiatives globally.
                     </p>
 
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    <div className="mt-8 flex flex-row justify-center items-center gap-3 sm:gap-4">
 
                         <Link
                             to="/donations"
                             className="
-                bg-green-500
-                hover:bg-green-600
-                text-white
-                font-semibold
-                px-8
-                py-4
-                rounded-xl
-                transition
-                shadow-2xl
-              "
+  bg-green-500
+  hover:bg-green-600
+  text-white
+  font-semibold
+  px-5 sm:px-8
+  py-3 sm:py-4
+  rounded-xl
+  transition
+  shadow-2xl
+  text-sm sm:text-base
+  whitespace-nowrap
+"
                         >
                             Donate Now
                         </Link>
@@ -69,18 +71,20 @@ const PaymentPolicy = () => {
                         <a
                             href="#policy"
                             className="
-                border
-                border-white/30
-                bg-gray/10
-                backdrop-blur-md
-                hover:bg-white/20
-                text-black
-                font-semibold
-                px-8
-                py-4
-                rounded-xl
-                transition
-              "
+  border
+  border-white/30
+  bg-white/10
+  backdrop-blur-md
+  hover:bg-white/20
+  text-black
+  font-semibold
+  px-5 sm:px-8
+  py-3 sm:py-4
+  rounded-xl
+  transition
+  text-sm sm:text-base
+  whitespace-nowrap
+"
                         >
                             Read Policy
                         </a>
