@@ -58,7 +58,7 @@ const StrategyPage = () => {
           >
 
             {/* BADGE */}
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white mb-8">
+            <div className="inline-flex mt-10 items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-white mb-8">
               <ShieldCheck size={18} />
               <span className="uppercase tracking-[0.2em] text-sm">
                 Ministry Strategy & Global Impact

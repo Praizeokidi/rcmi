@@ -4,7 +4,16 @@ import cottonbroImg from "../images/pexels-cottonbro-4630674.jpg";
 const Hero = () => {
   return (
     <section
-      className="relative  min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
+      className="
+  relative
+  min-h-screen
+  w-full
+  bg-cover
+  bg-center
+  bg-no-repeat
+  overflow-hidden
+  md:bg-fixed
+"
       style={{ backgroundImage: `url(${cottonbroImg})` }}
     >
       {/* DARK BASE OVERLAY */}

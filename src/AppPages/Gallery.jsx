@@ -75,7 +75,7 @@ const Gallery = () => {
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="mt-10 relative z-10 text-center max-w-4xl px-6">
 
           <h1 className="text-5xl md:text-6xl font-black tracking-wide">
             RCMI Global Gallery
