@@ -31,7 +31,7 @@ const PaymentPolicy = () => {
                     className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
                 >
 
-                    <div className="mt-28 mb-6">
+                    <div className="mt-24 mb-6">
                         <span className="bg-white/10 border border-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm tracking-widest uppercase">
                             RCMI Global Policy
                         </span>

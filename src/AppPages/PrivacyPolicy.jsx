@@ -15,7 +15,7 @@ import nappyPic from "../images/pexels-nappy-3360204.jpg";
 
 const PrivacyPolicy = () => {
     return (
-        <div className="bg-slate-50 mt-7 overflow-hidden">
+        <div className="bg-slate-50 mt-5 overflow-hidden">
 
             {/* HERO SECTION */}
             <section
