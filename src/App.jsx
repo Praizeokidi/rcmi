@@ -17,6 +17,8 @@ import MinistryReport from "./AppPages/MinistryReport";
 import Vision from "./AppPages/Vision";
 import Navbar from "./components/Navbarr/Navbar";
 import FAQ from "./AppPages/FAQ";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
 // import Headerr from "./components/Headerr";
 
 
@@ -30,6 +32,7 @@ const App = () => {
         {/* <Navbar /> */}
         {/* <Headerr /> */}
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route index element={<Home />} />
           <Route path="/" element={<Home />} />
@@ -46,6 +49,7 @@ const App = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/faqs" element={<FAQ />} />
         </Routes>
+        <BackToTop />
       </div>
       <ButtonGradient />
       {/* <Footerr /> */}
