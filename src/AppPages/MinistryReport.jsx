@@ -47,7 +47,7 @@ const MinistryReport = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/90" />
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="mt-15 relative z-10 text-center max-w-4xl px-6">
           <p className="text-xs tracking-[0.3em] uppercase text-gray-300">
             Humanitarian Transparency Report
           </p>

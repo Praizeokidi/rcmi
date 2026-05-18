@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import DonImg from "../assets/founder.jpeg";
 import BgMain from "../images/main-bcg.jpeg";
 import BgGirls from "../images/pexels-jibarofoto-2014773.jpg";
+import Logoz from "../assets/rcmil.svg";
+
+
+
 
 const Vision = () => {
   const [active, setActive] = useState("vision");
@@ -38,8 +42,8 @@ const Vision = () => {
     <a
       href={`#${id}`}
       className={`px-4 py-2 rounded-full transition font-medium whitespace-nowrap ${active === id
-          ? "bg-blue-900 text-white shadow-md"
-          : "text-gray-700 hover:bg-gray-100"
+        ? "bg-blue-900 text-white shadow-md"
+        : "text-gray-700 hover:bg-gray-100"
         }`}
     >
       {label}
@@ -94,7 +98,7 @@ const Vision = () => {
         </div>
 
         <div className="rounded-2xl overflow-hidden shadow-xl">
-          <img src={DonImg} alt="Founder" className="w-full h-full object-cover" />
+          <img src={Logoz} alt="logo" className="w-full h-full object-cover" />
         </div>
       </div>
 

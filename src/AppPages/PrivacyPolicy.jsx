@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-cyan-900/60"></div>
 
                 <div className="relative z-10 max-w-5xl px-6 text-center text-white">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-6">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-5">
                         <ShieldCheck className="w-5 h-5 text-cyan-300" />
                         <span className="text-sm tracking-wide uppercase">
                             GDPR-Compliant Privacy Standards
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
                         Privacy Policy
                     </h1>
 
-                    <p className="mt-6 text-lg sm:text-xl leading-relaxed text-gray-200 max-w-3xl mx-auto">
+                    <p className="mt-3 text-sm sm:text-xl leading-relaxed text-gray-200 max-w-3xl mx-auto">
                         Refuge and Consolation Ministry International (RCMI)
                         is committed to protecting your privacy, securing your
                         personal data, and maintaining transparency in how

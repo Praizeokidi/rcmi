@@ -71,7 +71,7 @@ const StrategyPage = () => {
             </h1>
 
             {/* TEXT */}
-            <p className="mt-8 text-lg sm:text-xl leading-relaxed text-gray-200 max-w-3xl">
+            <p className="mt-3 text-sm sm:text-xl leading-relaxed text-gray-200 max-w-3xl">
               Our ministry strategy is built on sustainable humanitarian
               outreach, medical missions, discipleship, leadership development,
               and transformational community engagement designed to restore

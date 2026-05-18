@@ -62,7 +62,7 @@ const DonationPage = () => {
               className="text-white"
             >
 
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+              <div className="inline-flex mt-28 items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
                 <span className="text-sm tracking-[0.2em] uppercase">
                   Refuge & Consolation Ministry International
                 </span>

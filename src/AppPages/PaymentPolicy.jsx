@@ -31,7 +31,7 @@ const PaymentPolicy = () => {
                     className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6"
                 >
 
-                    <div className="mt-15 mb-6">
+                    <div className="mt-20 mb-6">
                         <span className="bg-white/10 border border-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm tracking-widest uppercase">
                             RCMI Global Policy
                         </span>
@@ -41,7 +41,7 @@ const PaymentPolicy = () => {
                         Payment Policy
                     </h1>
 
-                    <p className="mt-6 max-w-3xl text-lg md:text-xl text-gray-200 leading-relaxed">
+                    <p className="mt-6 max-w-3xl text-sm sm:text-xl text-gray-200 leading-relaxed">
                         Transparent, secure, and accountable giving practices
                         designed to support humanitarian outreach, medical missions,
                         and Christian ministry initiatives globally.
