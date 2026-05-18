@@ -6,12 +6,19 @@ const Newsletter = () => {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // clear previous messages
+    setSuccessMessage("");
+    setErrorMessage("");
+
     if (!email.trim()) {
-      alert("Please enter your email");
+      setErrorMessage("Please enter your email address.");
       return;
     }
 
@@ -23,20 +30,35 @@ const Newsletter = () => {
         { email }
       );
 
-      alert("Thanks for subscribing!");
+      // SUCCESS MESSAGE
+      setSuccessMessage(
+        "Thanks for subscribing. You’ll receive updates from RCMI shortly."
+      );
+
+      // clear field
       setEmail("");
 
     } catch (error) {
+
       console.error("Newsletter Error:", error);
 
+      // BACKEND ERROR
       if (error.response?.data?.message) {
-        alert(error.response.data.message);
+
+        setErrorMessage(error.response.data.message);
+
       } else {
-        alert("Subscription failed");
+
+        setErrorMessage(
+          "Subscription failed. Please try again later."
+        );
+
       }
 
     } finally {
+
       setLoading(false);
+
     }
   };
 
@@ -72,6 +94,48 @@ const Newsletter = () => {
               </p>
 
               {/* FORM (UNCHANGED BACKEND LOGIC) */}
+              {/* SUCCESS MESSAGE */}
+              {successMessage && (
+                <div
+                  className="
+      mb-6
+      rounded-2xl
+      border
+      border-emerald-400/20
+      bg-emerald-500/10
+      backdrop-blur-md
+      px-5
+      py-4
+      text-sm
+      text-emerald-200
+      shadow-lg
+    "
+                >
+                  ✅ {successMessage}
+                </div>
+              )}
+
+              {/* ERROR MESSAGE */}
+              {errorMessage && (
+                <div
+                  className="
+      mb-6
+      rounded-2xl
+      border
+      border-red-400/20
+      bg-red-500/10
+      backdrop-blur-md
+      px-5
+      py-4
+      text-sm
+      text-red-200
+      shadow-lg
+    "
+                >
+                  ⚠️ {errorMessage}
+                </div>
+              )}
+
               <form
                 onSubmit={handleSubmit}
                 className="mt-8 flex flex-col sm:flex-row gap-4"
