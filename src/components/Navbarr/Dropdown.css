@@ -1,72 +1,94 @@
 .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  /* MODIFIED: anchors directly under parent */
+  left: 0;
+
+  min-width: 220px;
+
   display: flex;
   flex-direction: column;
-  background: #1888ff;
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
+
+  background: #111827;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
   list-style: none;
-  text-align: start;
+
   z-index: 9999;
-  padding-left: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  animation: dropdownFade 0.25s ease;
 }
 
 .dropdown-menu li {
-  background: #1888ff;
-  cursor: pointer;
-  padding: 10px 0;
+  width: 100%;
 }
 
-.dropdown-menu li:hover {
-  background: #5cabff;
+.dropdown-link {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px 18px;
+
+  text-decoration: none;
+
+  color: white;
+
+  transition: all 0.25s ease;
+}
+
+.dropdown-link:hover {
+  background: #1888ff;
+  padding-left: 24px;
 }
 
 .dropdown-menu.clicked {
   display: none;
 }
 
-/* ✅ CHANGED:
-   centered dropdown text
-*/
-.dropdown-link {
-  display: block;
-  width: 100%;
-  text-decoration: none;
-  color: #fff;
-  padding: 16px;
-  text-align: center;
+/* ANIMATION */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* MOBILE */
 @media screen and (max-width: 960px) {
-
-  /* ✅ CHANGED:
-     keep arrow visible on mobile
-  */
-  .fa-caret-down {
-    display: block;
-  }
-
-  /* ✅ CHANGED:
-   centers dropdown properly on mobile
-*/
   .dropdown-menu {
     position: static;
-    width: 100%;
-    box-shadow: none;
-    margin-top: 10px;
-    z-index: 999;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+
+    min-width: 100%;
+
+    margin-top: 10px;
+
+    border-radius: 10px;
+
+    background: #1e293b;
+
+    box-shadow: none;
+    transition: all 0.25s ease;
   }
 
-  /* ✅ NEW:
-     makes dropdown items easier to tap on mobile
-  */
   .dropdown-link {
-    padding: 18px 16px;
-    width: 100%;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  .dropdown-link:hover {
+    padding-left: 16px;
   }
 }

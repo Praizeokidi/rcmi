@@ -46,7 +46,7 @@ const ContactPage = () => {
 
       // ✅ PROFESSIONAL SUCCESS MESSAGE
       setSuccessMessage(
-        "Successfully submitted. You will receive an email shortly."
+        "Form submitted. You will receive an email shortly."
       );
 
       // clear form
@@ -134,7 +134,7 @@ const ContactPage = () => {
       shadow-sm
     "
                   >
-                    ✅ {successMessage}
+                    {successMessage}
                   </div>
                 )}
 
@@ -155,7 +155,7 @@ const ContactPage = () => {
       shadow-sm
     "
                   >
-                    ⚠️ {errorMessage}
+                    {errorMessage}
                   </div>
                 )}
 

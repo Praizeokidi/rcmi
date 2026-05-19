@@ -45,6 +45,9 @@
   display: flex;
   align-items: center;
   height: 80px;
+
+  /* ADDED: smooth hover/interaction animation */
+  transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -76,136 +79,130 @@
 }
 
 
+
 @media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
-  }
-
-  .navbar-logo-img {
-    margin-left: 8px;
-    /* move right */
-    margin-top: -60px;
-    /* slight vertical adjustment */
-  }
-
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    background: #0b1220;
-    opacity: 1;
-    transition: all 0.3s ease;
-    z-index: 1;
-  }
-
-  .nav-menu.active {
-    background: #242222;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-    padding: 20px 0;
-  }
-
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-links:hover {
-    background-color: #1888ff;
-    border-radius: 0;
-  }
-
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  }
 
   .menu-icon {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
     font-size: 1.8rem;
     cursor: pointer;
+    z-index: 10001;
+    color: white;
   }
 
   .fa-times {
-    color: #fff;
     font-size: 2rem;
+    color: white;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    position: fixed;
+
+    top: 80px;
+    left: -100%;
+
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    background: #111827;
+
+    transition: all 0.4s ease;
+
+    padding: 10px 0;
+
+    overflow-y: auto;
+
+    z-index: 9998;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 4px 0;
+
+    height: auto;
+  }
+
+  .nav-item .flex {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+
+    width: auto;
+
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    display: block;
+
+    text-align: center;
+
+    padding: 14px 16px;
+
+    color: white;
+  }
+
+  .nav-links:hover {
+    background: #1888ff;
+    border-radius: 0;
   }
 
   .nav-links-mobile {
     display: block;
+
+    width: 85%;
+
+    margin: 14px auto;
+
+    padding: 14px;
+
     text-align: center;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
+
     background: #1888ff;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
 
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #1888ff;
-    transition: 250ms;
-  }
-
-  /* ✅ CHANGED:
-   allow nav item to expand when dropdown opens
-*/
-  .nav-item {
-    height: auto;
-    width: 100%;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-    padding: 14px 20px;
-  }
-
-  /* ✅ CHANGED:
-   keeps arrow beside About Us instead of far right
-*/
-  .nav-item .flex {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    width: auto;
-    margin: 0 auto;
-  }
-
-  /* ✅ NEW:
-   dropdown button visible + clickable
-*/
-  .nav-item button {
-    display: block;
-    background: transparent;
-    border: none;
     color: white;
-    padding-right: 20px;
-    cursor: pointer;
+
+    border-radius: 10px;
+
+    text-decoration: none;
   }
 
-  /* ✅ NEW:
-   dropdown fills mobile menu width properly
-*/
   .dropdown-menu {
-    width: 100%;
     position: static;
+
+    width: 100%;
+
+    min-width: 100%;
+
+    margin-top: 8px;
+
+    box-shadow: none;
+  }
+
+  .dropdown-link {
+    text-align: center;
   }
 }

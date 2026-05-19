@@ -32,7 +32,7 @@ const Newsletter = () => {
 
       // SUCCESS MESSAGE
       setSuccessMessage(
-        "Thanks for subscribing. You’ll receive updates from RCMI shortly."
+        "Thanks for subscribing. You’ll now receive updates from RCMI."
       );
 
       // clear field
@@ -111,7 +111,7 @@ const Newsletter = () => {
       shadow-lg
     "
                 >
-                  ✅ {successMessage}
+                  {successMessage}
                 </div>
               )}
 
@@ -132,7 +132,7 @@ const Newsletter = () => {
       shadow-lg
     "
                 >
-                  ⚠️ {errorMessage}
+                  {errorMessage}
                 </div>
               )}
 

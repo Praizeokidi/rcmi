@@ -3,18 +3,27 @@ import axios from "axios";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const Contact = () => {
+
   // NEW: form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // NEW: UI feedback states
+  const [successMessage, setSuccessMessage] = useState(""); // NEW
+  const [errorMessage, setErrorMessage] = useState(""); // NEW
+
   // NEW: submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // NEW: clear old messages before new submit
+    setSuccessMessage("");
+    setErrorMessage("");
+
     if (!name || !email || !message) {
-      alert("Please fill all fields");
+      setErrorMessage("Please fill all fields"); // CHANGED: replaced alert
       return;
     }
 
@@ -30,15 +39,23 @@ const Contact = () => {
         }
       );
 
-      alert("Thanks for contacting us. An email will be sent to you shortly");
+      // CHANGED: replaced alert with success UI message
+      setSuccessMessage(
+        "Thanks for contacting us. An email will be sent to you shortly."
+      );
 
+
+      // clear form
       setName("");
       setEmail("");
       setMessage("");
 
     } catch (error) {
       console.error(error);
-      alert("Failed to send message");
+
+
+      // CHANGED: replaced alert with error UI message
+      setErrorMessage("Failed to send message. Please try again.");
 
     } finally {
       setLoading(false);
@@ -120,6 +137,20 @@ const Contact = () => {
             <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -right-28 -top-28"></div>
             <div className="hidden sm:block absolute w-40 h-40 bg-teal-400 rounded-full -left-28 -bottom-24"></div>
             <div className="relative z-10 bg-white rounded-xl shadow-lg p-5 sm:p-8 text-gray-600 overflow-visible">
+
+              {/* SUCCESS MESSAGE UI */}
+              {successMessage && (
+                <div className="bg-green-100 text-green-700 p-3 rounded mb-4">
+                  {successMessage}
+                </div>
+              )}
+
+              {/* ERROR MESSAGE UI */}
+              {errorMessage && (
+                <div className="bg-red-100 text-red-700 p-3 rounded mb-4">
+                  {errorMessage}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full pb-6">
                 <div>
                   <label htmlFor="" className="text-sm">
